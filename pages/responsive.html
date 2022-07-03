@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="ES">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS - Responsive design</title>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>CSS - Filter</h1>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="../index.html">BÁSICO</a></li>
+                    <li><a href="./text.html">TEXT</a></li>
+                    <li><a href="./propertys.html">PROPIEDADES</a></li>
+                    <li><a href="./pyl.html">POSICIONAMIENTO & DISEÑO</a></li>
+                    <li><a href="./backgroundandgradients.html">GRADIENTS & BACKGROUNDS</a></li>
+                    <li><a href="./transitions.html">TRANSICIONES & TRANSFORMACIONES</a></li>
+                    <li><a href="./filters.html">FILTER</a></li>
+                    <li><a href="./display.html">DISPLAY</a></li>
+                    <li><a href="#">RESPONSIVE DESIGN</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section>
+            <h4>Contenidos</h4>
+            <ul class="page-nav">
+                <li><a href="#resp">Diseño responsive</a></li>
+                <li><a href="#media">@media</a></li>
+                <li><a href="#flex">Flexbox</a></li>
+                <li><a href="#direction">flex-direction</a></li>
+                <li><a href="#wrap">flex-wrap</a></li>
+                <li><a href="#flow">flex-flow</a></li>
+                <li><a href="#justify">justify-content</a></li>
+                <li><a href="#items">align-items</a></li>
+                <li><a href="#content">align-content</a></li>
+                <li><a href="#items">Flex Items</a></li>
+                <li><a href="#grid">Grid</a></li>
+                <li><a href="#templates">Grid templates</a></li>
+                <li><a href="#gap">Grid gap</a></li>
+                <li><a href="#pos">Posicionamiento</a></li>
+                <li><a href="#imp">Grid implicito</a></li>
+                <li><a href="#din">Grid dinámico</a></li>
+                <li><a href="#alg">Alineación Grid</a></li>
+                <li><a href="#area">Grid Areas</a></li>
+                <li><a href="#glin">Grid lineas</a></li>
+                <li><a href="#short">Grid shorthands</a></li>
+                <li><a href="#respo">Responsive design advanced</a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </section>
+
+        <section>
+            <article>
+                <h2 id="resp">Diseño responsive</h2>
+                <p>
+                    El sistema detecta automáticamente el ancho de la pantalla y, 
+                    a partir del mismo, adapta todos los elementos de la página, 
+                    desde el tamaño de letra hasta las imágenes y los menús, ofreciendo al usuario
+                     la mejor experiencia posible. 
+                </p>
+            </article>
+
+            <article>
+                <h2 id="media">@media</h2>
+                <p>
+                    La regla-at CSS @media asocia un grupo de declaraciones anidadas, 
+                    en un bloque CSS delimitado por llaves, con una condición definida por un media query. 
+                    La regla-at @media puede ser usada no solo en el nivel superior de la hoja de estilos,
+                     sino también dentro de cualquier grupo de reglas conditionales.
+                </p>
+                <p><b>
+                    Ej: <br>
+                    @media only screen and(max-width: 768px) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;.divfont {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 2rem;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }
+                </b></p>
+                <p>Se puede simplificar la sintaxis con <b>@media (max-width: 768px) {}</b> </p>
+                <h3>max-width</h3>
+                <p>
+                    Determina el máximo de pixeles para las cuales se va a aplicar el estilo. En el ejemplo anterior
+                    solo se aplicaría para pantallas más pequeñas a 768px.
+                </p>
+                <h3>min-width</h3>
+                <p>
+                    Determina el minimo de pixeles para las cuales se va aplicar el estilo.Ej: (min-width: 768px).
+                    El estilo se aplicara a pantallas más grandes a 768px.
+                </p>
+                <h3>Etiqueta viewport</h3>
+                <p>
+                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; <br>
+                    Para que los efectos de la regla @media sean aplicados será necesario que la etiqueta html 
+                    tenga aplicada la etiqueta viewport en su head.
+                </p>
+                
+            </article>
+
+            <article>
+                <h2 id="flex">Flexbox</h2>
+                <p>
+                    <b>display: flex;</b><br>
+                    Flexbox es un método de diseño de página unidimensional para compaginar elementos en 
+                    filas o columnas. Los elementos de contenido se ensanchan para rellenar el espacio adicional 
+                    y se encogen para caber en espacios más pequeños.
+                    Si no se le añade una propiedad adicional, display: flex; se comporta como block.<br>
+                    Flexbox funciona con coordenadas imaginarias en el eje x(main axis) y el eje y(cross axis).
+                    Las propiedades flex solo afectaran a hijos directos del elemento con la propiedad.
+                    Los hijos se acomodaran en base a su contenido. Flex mantiene la altura por defecto, flex 
+                    modificara propiedades del elemento con el objetivo de mantener la altura. Si no quisiera 
+                    que el ancho de las cajas se ajuste al ancho del viewport tendría que determinar el ancho 
+                    de los elementos para que estos no se expandan.
+
+                </p>
+                <div><img width="100%" src="../images/flexbox.png"></div>
+            </article>
+
+            <article id="direction">
+                <h2>Propiedad flex-direction</h2>
+                <p>
+                    La propiedad CSS flex-direction especifica cómo colocar los objetos flexibles 
+                    en el contenedor flexible definiendo el eje principal y la dirección (normal o al revés).
+                    Es decir, invierte el mains axis y el cross axis.
+                </p>
+                <p>Valores:</p>
+                <ul>
+                    <li>
+                        <b>row</b>
+                        <p>
+                            Valor por defecto, los hijos se agrupan en una fila a lo largo del main axis, el 
+                            cross axis & main axis matienen su orientación normal
+                        </p>
+                    </li>
+                    <li>
+                        <b>row-reverse</b>
+                        <p>
+                            Los hijos invierten su posición. Invierte el main axis haciendo que el flujo corra de 
+                            derecha a izquierda en vez de derecha a izquierda. El inicio y el final son intercambiados.
+                        </p>
+                    </li>
+                    <li>
+                        <b>column</b>
+                        <p>
+                            Los hijos se apilan en una columna. El main axis es ahora vertical, y el cross axis
+                            horizontal.
+                        </p>
+                    </li>
+                    <li>
+                        <b>column-reverse</b>
+                        <p>
+                            Los hijos se apilan en una columna pero invirtiendo su posición. El main axis es ahora 
+                            vertical y el cross axis horizontal. El inicio y el final son intercambiados.
+                        </p>
+                    </li>
+            </article>
+
+            <article>
+                <h2 id="wrap">Propiedad flex-wrap</h2>
+                <p>
+                    La propiedad flex-wrap de CSS  especifica si los elementos "hijos" son obligados a permanecer 
+                    en una misma línea o pueden fluir en varias líneas. Si la cobertura (wrap) está permitida,
+                     esta propiedad también te permite controlar la dirección en la cual serán apilados los elementos.
+                </p>
+                <p>Valores:</p>
+                <ul>
+                    <li>
+                        <b>nowrap</b>
+                        <p>
+                            Valor por defecto.Los elementos flex son distribuidos en una sola línea, lo cual puede
+                            llevar a que se desborde el contenedor flex. El valor cross-start es equivalente a 
+                            start o before según el valor de flex-direction.
+                        </p>
+                    </li>
+                    <li>
+                        <b>wrap</b>
+                        <p>
+                            Los elementos flex son colocados en varias líneas. El valor cross-start equivale a 
+                            start o before dependiendo del valor flex-direction y cross-end implicaría lo opuesto 
+                            a lo especificado por cross-start. Si el viewport no es suficientemente ancho, los 
+                            elementos hijos irán a la siguiente línea.
+                        </p>
+                    </li>
+                    <li>
+                        <b>wrap-reverse</b>
+                        <p>
+                            Actúa como wrap pero cross-start y cross-end están intercambiados. Es decir, el cross
+                            axis es invertido.
+                        </p>
+                    </li>
+                </ul>
+            </article>
+
+            <article>
+                <h2 id="flow">Propiedad flex-flow</h2>
+                <p>
+                    La propiedad CSS flex-flow  es una propiedad atajo para las propiedades individuales flex-direction y flex-wrap.
+                </p>
+                <p>
+                    Sintaxis:(El primer valor es de direction y el segundo wrap separados por un espacio).<br>
+                    Ej: <b>flex-flow: column wrap;</b>
+                </p>
+            </article>
+
+            <article>
+                <h2 id="justify">Propiedad justify-content</h2>
+                <p>
+                    La propiedad CSS justify-content define cómo el navegador distribuye el espacio entre y alrededor de los items
+                    flex, a lo largo del eje principal de su contenedor.El alineamiento se produce luego de que
+                    las longitudes y márgenes automáticos son aplicados, lo que significa que, si existe al 
+                    menos un elemento flexible con flex-grow diferente a 0, no tendrá efecto ya que no habrá 
+                    espacio disponible.
+                    Usar justify-content es similar a definir margin auto.
+                </p>
+                <p>Valores:</p>
+                <ul>
+                    <li>
+                        <b>flex-start</b>
+                        <p>
+                            Los items flex se colocan comenzando desde el comienzo principal. El margen del primer item es alineado 
+                            al ras con el borde del comienzo principal de la línea y cada item siguiente es alineado al ras con el 
+                            precedente.
+                        </p>
+                    </li>
+                    <li>
+                        <b>flex-end</b>
+                        <p>
+                            Los items flex se colocan comenzando desde el final principal. El margen del último item es alineado 
+                            al ras con el borde del final principal de la línea y cada item precedente es alineado al ras con el siguiente.
+                        </p>
+                    </li>
+                    <li>
+                        <b>center</b>
+                        <p>
+                            Los items flex son colocados hacia el centro de la línea. Los items flex se alinean al 
+                            ras entre sí y en torno al centro de la línea. El espacio entre el borde del comienzo 
+                            principal de la línea y el primer item es el mismo que el espacio entre el borde del 
+                            final principal y el último item de la línea.
+                        </p>
+                    </li>
+                    <li>
+                        <b>space-between</b>
+                        <p>
+                            Los items flex se distribuyen uniformemente sobre la línea. El espaciamiento se hace de tal manera que el espacio 
+                            adyacente entre dos items es el mismo. El borde del comienzo principal y el borde del final principal
+                            se alinean al ras con el borde del primer y último item respectivamente.
+                        </p>
+                    </li>
+                    <li>
+                        <b>space-around</b>
+                        <p>
+                            Los items flex se alinean uniformemente de tal manera que el espacio entre dos items adyacentes es el mismo.
+                            El espacio vacío anterior al primer item y posterior al último item equivale a la mitad del espacio entre dos 
+                            items adyacentes. El primer y ultimo item al no tener otro contenedor hermano a su lado dara el efecto de que 
+                            el margen que esta en contacto con el contenedor padre parezca que mide la mitad.
+                        </p>
+                    </li>
+                    <li>
+                        <b>space-evenly</b>
+                        <p>
+                            Da un espaciado especifico para que el espaciado inicial y final sea igual al espacio entre
+                            los hijos. Similar a space-around con la diferencia de que el espacio entre los hijos es igual
+                            al espacio entre el borde del padre y el borde del primer y ultimo hijo.
+                        </p>
+                    </li>
+                </ul>
+            </article>
+
+            <article>
+                <h2 id="items">Propiedad align-items</h2>
+                <p>
+                    La propiedad CSS align-items establece el valor align-self sobre todos los descendientes directos de un grupo. 
+                    La propiedad align-self indica la alineación de un elemento dentro del bloque que lo contiene. 
+                    En Flexbox controla la alineación de los elementos del Cross Axis (en-US), 
+                    en Grid Layout controla la alineación de los elementos en el eje Block dentro de su área grid.
+                    Align-items, dentro de flexbox se usa para una sola línea. Si hay más de una línea el efecto 
+                    solo se aplicara en cada linea individual, es decir, si se especifica center, los elementos 
+                    estaran centrados respecto al cross axis pero solo en su línea ,no centradas respecto a su padre
+                    sino a su línea.
+                </p>
+                <p>Valores:</p>
+                <ul>
+                    <li>
+                        <b>strech</b>
+                        <p>
+                            Propiedad por defecto. Los elementos se agrupan uno junto al otro hacia 
+                            el borde inicial del contenedor de alineación en el eje apropiado.
+                            Si el largo no está definido se estira hasta el final el ancho.
+                        </p>
+                    </li>
+                    <li>
+                        <b>flex-start</b>
+                        <p>
+                            El límite del margen transversal inicial del elemento flexible es unido al borde transversal 
+                            final de la línea. Si el largo no esta definido se acorta el ancho de los  hijos.
+                        </p>
+                    </li>
+                    <li>
+                        <b>flex-end</b>
+                        <p>
+                            El límite del margen transversal final del elemento flexible es unido al borde transversal final de la línea.
+                        </p>
+                    </li>
+                    <li>
+                        <b>center</b>
+                        <p>
+                            Los márgenes del elemento flexible son centrados dentro de la línea sobre su eje 
+                            transversal. Si el tamaño transversal del elemento es mayor al del contenedor, 
+                            se excederá por igual en ambas direcciones.
+                        </p>
+                    </li>
+                    <li>
+                        <b>baseline</b>
+                        <p>
+                            Todos los elementos flexibles son ajustados de modo que sus bases queden alineadas. 
+                            El elemento con la distancia mayor entre su límite transversal inicial y su base es
+                            combinado con el borde transversal de la línea.
+                        </p>
+                    </li>
+                </ul>
+            </article>
+
+            <article>
+                <h2 id="content">Propiedad align-content</h2>
+                <p>
+                    Similar a align-items con la diferencia de que es empleado para alinear valores en el cross-axis
+                    multiples líneas. Recibe los mismos valores que align-items. La diferencia radica en que 
+                    alineara los items respecto al padre y no a las líneas en las que estan.
+                </p>
+            </article>
+            <article>
+                <h2 id="items">Flex Items</h2>
+                <p>
+                    Para más de una línea. La propiedad debe ser dada al item que quiero alinear en vez del a 
+                    contenedor. Deben estar adentro de un contenedor con propiedad flex.
+                </p>
+                <h3>Propiedad margin</h3>
+                <p>
+                    Cuando el margin es seteado en auto en alguna direccion, el elemento ira hasta el otro lado 
+                    completamente. Si se les da auto a todos los valores, se centrara.x
+                </p>
+                <h3>Propiedad align-self</h3>
+                <p>
+                    Funciona como align-content pero para un solo elemento. Los valores son lo mismos que align-content
+                </p>
+                <h3>Propiedad flex-grow</h3>
+                <p>
+                    De todo el espacio en el main axis disponible es repartido entre todos los items, si seteo 1
+                    todos los hijos recibiran 1fr del espacio disponible que será adicionado en su width (cuando 
+                    todos los elementos tienen esa propiedad). Cuando está especificado solo sobre un elemento 
+                    este recibira todo el espacio. <br>
+                    Valores: Numericos fr, no hace falta escribir fr.
+                </p>
+                <h3>Propiedad flex-basis</h3>
+                <p>
+                    Modifica el ancho del content con la diferencia de que este valor es más relevante que el width.
+                </p>
+                <h3>Propiedad flex-shrink</h3>
+                <p>
+                    La propiedad CSS flex-shrink especifica el factor de contracción de un flex item. 
+                    Los flex items se encogerán para llenar el contenedor de acuerdo a su número flex-shrink, 
+                    cuando el tamaño por defecto de los flex items sea mayor al de su contenedor flex container. 
+                    Si le doy un ancho particular a las cajas y estas estan seteadas para encojerse al contraer la
+                    ventana, los items seteados con shrink si el valor es > 1 tendran un factor de decrecimiento 
+                    mayor respecto a los que no están seteados. Si tiene un valor inferior a uno sederá menos 
+                    espacio que los items hermanos. Si tiene 0 no cedera nada de espacio.
+                </p>
+                <h3>Propiedad flex</h3>
+                <p>
+                    Agrupa las propiedades anteriores en una sola (flex-grow, flex-shrink, flex-basis).
+                    Primer parametro obligatorio. Los valores van separados por un espacio.
+
+                </p>
+                <p>Sintaxis: flex: flex-grow flex-shirnk flex basis</p>
+                <h3>Propiedad order</h3>
+                <p>
+                    Posiciona los elementos en cuato al valor que este adentro de order. Acepta solo valores 
+                    numericos enteros. Un elemento con la propiedad Order con valor 1 estará posicionado más a 
+                    la derecha que aquellos elementos que no tengan un valor asignado o cuyo valor sea inferior 
+                    a 1. El elemento más grande siempre apuntara al final del axis y el más chico al principio.
+                    El valor por defecto es 0.
+                </p>
+            </article>
+
+            <article>
+                <h2 id="grid">Grid</h2>
+                <p>
+                    <b>display: grid;</b><br>
+                    CSS Grid layout contiene funciones de diseño dirigidas a los desarrolladores de aplicaciones web.
+                    El CSS grid se puede utilizar para lograr muchos diseños diferentes. También se destaca 
+                    por permitir dividir una página en áreas o regiones principales, por definir la relación 
+                    en términos de tamaño, posición y capas entre partes de un control construido a partir de 
+                    primitivas HTML.<br>
+                    Al igual que las tablas, el grid layout permite a un autor alinear elementos en columnas 
+                    y filas. Sin embargo, con CSS grid son posibles muchos más diseños y de forma más sencilla que 
+                    con las tablas. Por ejemplo, los elementos secundarios de un contenedor de cuadrícula podrían 
+                    posicionarse para que se solapen y se superpongan, de forma similar a los elementos posicionados
+                    en CSS.
+                </p>
+                <h3>Grid Container</h3>
+                <p>
+                    Es el contenedor al cual se le aplica la propiedad <b>display: grid;</b> 
+                    Este contenedor será una grilla divida por filas y columnas.
+                </p>
+                <h3>Grid Item</h3>
+                <p>
+                    Son todos los elementos hijos de la propiedad con display grid. El item será aquel conjunto 
+                    de hijos que ocupa el lugar de una celda.
+                </p>
+                <h3>Grid cell</h3>
+                <p>
+                    Es cada una de las celdas originadas por las filas y columnas de grid.
+                </p>
+                <h3>Grid Tracks (Column y Row)</h3>
+                <p>
+                    Son todas las filas y columnas en un elemento con grid. La cantidad total de tracks es igual 
+                    a la suma de filas y columnas total.
+                </p>
+                <h3>Grid Area</h3>
+                <p>
+                    Son areas definidas por el desarrollador, es un conjunto de celdas que son agrupadas.
+                    Las Areas deben ser consecutivas, por lo tanto serán cuadrados o rectangulos.
+                </p>
+                <h3>Grid Line</h3>
+                <p>
+                    Son las líneas divisorias de las filas y columnas incluidas las lineas del perimetro. La 
+                    primera línea de la fila será la línea superior, y la primera línea de la columna será la 
+                    de la izquierda.
+                </p>
+            </article>
+
+            <article>
+                <h2 id="templates">Propiedades grid Templates</h2>
+                <p>
+                    Determinan la cantidad de filas y columnas; y su grosor. Sus propiedades son dos: 
+                    <b>grid-templates-rows</b> y <b>grid-templates-columns</b>.
+                </p>
+                <h3>Propiedad grid-templates-rows</h3>
+                <p>
+                    Determina la cantidad de filas y su grosor. El grosor puede ser establecido mediante 
+                    valores length, porcentaje y fr (fracción).
+                </p>
+                <h3>Propiedad grid-templates-columns</h3>
+                <p>
+                    Determina la cantidad de columnas y su grosor. El grosor puede ser establecido mediante 
+                    valores length, porcentaje y fr (fracción).
+                </p>
+                <h3>Funcion repeat(cantidad,unidad) unidad</h3>
+                <p>
+                    Es una función que repite la celda o columna, sirve para sustituir los valores. Puedo poner 
+                    varias unidades separadas por un espacio dentro de los parentesis que seran repetidas en la 
+                    linea la cantidad de veces establecida. Si coloco una medida por fuera de los parentesis, esta 
+                    fila/columna será adicionada al resultado final. Al usar repeat en columns se crearan
+                    automaticamente columnas para almacenar los items que esten dentro o que se vayan
+                    agregando en el contenedor. Repeat no funciona con filas.
+                </p>
+            </article>
+
+            <article>
+                <h2 id="gap">Propiedades gap</h2>
+                <p>
+                    Es la distancia que va a haber entre todas las casillas, sin contar los bordes del contenedor.
+                    El valor que puede recibir son tipo length.
+                </p>
+                <h3>Propiedad grid-gap</h3>
+                <p>Permite establecer un gap tanto a las filas como a las columnas.</p>
+                <h3>Propiedad grid-row-gap</h3>
+                <p>Permite establecer un gap para las filas</p>
+                <h3>Propiedad grid-column-gap</h3>
+                <p>Permite establecer un gap para las columnas</p>
+            </article>
+
+            <article>
+                <h2 id="pos">Propiedades de posicionamiento</h2>
+                <p>
+                    Las propiedades de posicionamiento determina cuantas celdas abarcara el elemento dentro 
+                    del elemento padre con grid. <br>
+                    <b>Sintaxis general simplificada: "1 / 3"</b> 
+                    El primer numero determina en que linea 
+                    iniciara el elemento mientras que el segundo marcara en que linea termina el elemento.
+                    Se puede usar la palabra clave <b>span</b> en el segundo valor para determinar cuantas casillas 
+                    queremos que ocupe el elemento. Ej: <b>"1 / span 3"</b>
+                    
+                </p>
+                <h3>Propiedad grid-row-start</h3>
+                <p>
+                    Determina en que linea de fila comenzara a ocupar espacio el elemento.
+                </p>
+                <h3>Propiedad grid-row-end</h3>
+                <p>
+                    Determina en que linea de fila terminara de a ocupar espacio el elemento.
+                </p>
+                <h3>Propiedad grid-row</h3>
+                <p>
+                    Esta propiedad agrupa las anteriores dos propiedades anteriormente mencionadas y las convina
+                    en una usando la sintaxis simplificada.
+                </p>
+                <h3>Propiedad grid-column-start</h3>
+                <p>Determina en que linea de columna comenzara a ocupar espacio elemento.</p>
+                <h3>Propiedad grid-column-end</h3>
+                <p>Determina en que linea de columna terminara de a ocupar espacio el elemento.</p>
+                <h3>Propiedad grid-column</h3>
+                <p>
+                    Esta propiedad agrupa las anteriores dos propiedades anteriormente mencionadas y las convina
+                    en una usando la sintaxis simplificada.
+                </p>
+            </article>
+
+            <article>
+                <h2 id="imp">Grid implicito</h2>
+                <p>
+                    El grid implicito es aquel que crea automaticamente celdas, filas y columnas para mi
+                    contenido aunque no este especificado. Esto ocurre cuando hay repeat, o cuando la cantidad 
+                    de elementos dentro del contenedor grid supera a el numeros de casillas determinadas por defecto.
+                </p>
+                <h3>grid-auto-columns</h3>
+                <p>
+                    La propiedad de css grid-auto-columns especifíca el tamaño de una columna de cuadrícula creada 
+                    implícitamente.
+                </p>
+                <h3>grid-auto-rows</h3>
+                <p>
+                    La propiedad de css grid-auto-columns   especifíca el tamaño de una columna de cuadrícula 
+                    creada implícitamente
+                </p>
+                <h3>
+                    grid-auto-flow
+                </h3>
+                <p>
+                    La propiedad grid-auto-flow CSS controla cómo funciona el algoritmo de colocación automática, 
+                    especificando exactamente cómo los elementos colocados automáticamente fluyen hacia la cuadrícula.
+                </p>
+                <p>Valores:</p>
+                <ul>
+                    <li>
+                        <b>row</b>
+                        <p>
+                            Los artículos se colocan llenando cada fila a su vez, agregando nuevas 
+                            filas según sea necesario. Si no se proporciona row ni , se asume column
+                        </p>
+                    </li>
+                    <li>
+                        <b></b>
+                        <p></p>
+                    </li>
+                    <li>
+                        <b>column</b>
+                        <p>
+                            Los artículos se colocan llenando cada columna a su vez, agregando nuevas columnas según sea necesario.
+                        </p>
+                    </li>
+                    <li>
+                        <b>dense</b>
+                        <p>
+                            El algoritmo de empaquetamiento "denso" intenta llenar los agujeros antes en la 
+                            cuadrícula, si aparecen elementos más pequeños más tarde. Esto puede hacer que los 
+                            artículos parezcan desordenados, cuando al hacerlo se llenarían los huecos que dejan 
+                            los artículos más grandes.<br>
+                            Si se omite, se usa un algoritmo "disperso", en el que el algoritmo de ubicación solo se 
+                            mueve "hacia adelante" en la cuadrícula al colocar elementos, nunca retrocede para llenar
+                            los huecos. Esto garantiza que todos los elementos colocados automáticamente aparezcan 
+                            "en orden", incluso si esto deja huecos que podrían haberse llenado con elementos 
+                            posteriores.
+                        </p>
+                    </li>
+                </ul>
+            </article>
+
+            <article>
+                <h2 id="din">Grid dinámico</h2>
+                <p>
+                    El grid dinamico es aquel que tiene estructuras autoajustables.
+                </p>
+                <h3>min-content max-content</h3>
+                <p>
+                    Se usa dentro del repeat para que la celda no se encoja más que el contenido más grande insertado 
+                    dentro. Ej: repeat(3,min-content) Mientras que max-content se usa para establecer que la celda 
+                    no medira más que el ancho del contenido mas ancho.
+                </p>
+                <h3>minmax</h3>
+                <p>
+                    Nos permite definir cual sera el minimo que medira una celda y su maximo. Ej:
+                    repeat(3, minmax(100px, 300px)). El primer valor correspondera al minimo y el segundo al maximo.
+                    Acepta valores length y las palabras clave min-content y max-content.
+                </p>
+                <h3>autofill</h3>
+                <p>
+                    Generara las columnas que pueda que cumpla con esas propiedades.
+                    repeat(autofill, minmax(100px, 300px))
+                </p>
+                <h3>autofit</h3>
+                <p>
+                    AJUSTA las columnas ACTUALMENTE DISPONIBLES en el espacio al expandirlas para que ocupen
+                    cualquier espacio disponible. Ej: repeat(auto-fit,minmax(120px,1fr)). Si hay muchos elementos 
+                    al agrandar la pantallas los incluira en la fila.
+                </p>
+            </article>
+
+            <article>
+                <h2 id="alg">Alineación Grid</h2>
+                <p>
+                    Existen dos tipos de alineacion, la alineación que se aplica dentro de cada Item y la 
+                    alineacion del contenedor. Será un "flex container"
+                </p>
+                <h3>Propiedad justify-items</h3>
+                <p>
+                    Alinea todo horizontalmente al igual que justify-content en flex con la diferencia de que cada 
+                    objeto tambien se alinea dentro de su celda. Valores: strech,start, center, end. Si el ancho y el largo 
+                    no esta especificados se contraeran.
+                </p>
+                <h3>Propiedad align-items</h3>
+                <p>
+                    Alinea todo verticalmente al igual que align-items de flex. Valores: strech,start, center, end
+                </p>
+                <h3>Propiedad justify-content</h3>
+                <p>
+                    Alinea las celdas horizontalmente. Los valores son los mismos que los anteriores sumando
+                    space-around, space-between y evenly
+                </p>
+                <h3>Propiedad align-content</h3>
+                <p>
+                    Alinea las celdas verticualmente. los valores son los mismos que los anteriores sumando
+                    space-around, space-between y evenly.
+                </p>
+                <h3>Propiedades align-self y justify-self</h3>
+                <p>Alinea individualmente la celda elegida horizontal o verticalmente.</p>
+                <h3>Propiedad place-self</h3>
+                <p>
+                    La propiedad place self es la sumatoria de algn y justify el primer valor 
+                    corresponde a align y el segundo a justify, van separados por un espacio.
+                    Valor por defecto, strech.
+                </p>
+                <h3>order</h3>
+                <p>
+                    Posiciona los elementos en cuato al valor que este adentro de order. Acepta solo valores 
+                    numericos enteros. Un elemento con la propiedad Order con valor 1 estará posicionado más a 
+                    la derecha y abajo que aquellos elementos que no tengan un valor asignado o cuyo valor sea inferior 
+                    a 1. El elemento más grande siempre apuntara al final del axis y el más chico al principio.
+                    El valor por defecto es 0.
+                </p>
+            </article>
+
+            <article>
+                <h2 id="area">Grid Areas</h2>
+                <p>
+                    Sirve para separar el contenido en multiples areas de celdas.
+                </p>
+                <h3>Propiedad grid-templates-areas</h3>
+                <p>
+                    La propiedad CSS grid-template-areas especifica nombres para cada una de las grid areas.
+                    Se divide con areas como si fuesen nombres. Dentro de la sintaxis cada conjunto de terminos 
+                    separados por comillas será una fila, correspondiendo el nombre del primer termino a la primer 
+                    celda, y el ultimo termino a la ultima celda. El nombre clave del termino será especificado 
+                    dentro del contenedor que quiero que ocupe el area con la propiedad <b>grid-area</b>.
+                    Adicionalmente se le puede asignar el ancho a cada celda mediante grid-templates-columns y 
+                    grid-templates-rows.
+                </p>
+                <h3>Propiedad grid-area</h3>
+                <p>
+                    La propiedad abreviadagrid-area de CSS especifica el tamaño y la ubicación de un elemento 
+                    de cuadrícula dentro de una cuadrícula al contribuir con una línea, un tramo o nada (automático) 
+                    a su ubicación en la cuadrícula. Puede establecerse mediante una palabra clave que será relacionada 
+                    directamente en el grid-template-areas o se puede especificar con la siguiente sintaxis: 
+                    0 / 0 / 0 / 0 Orden de valores (primer valor fila inicial, segundo valor columna inicial,
+                    tercer valor fila final, cuarto valor fila final.)
+                </p>
+            </article>
+
+            <article>
+                <h2 id="glin">Grid lineas</h2>
+                <p>
+                    Para definir el nombre de las lineas de las filas se emplea la siguiente sintaxis:
+                </p>
+                <p>
+                    grid-template-rows: <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[lineauno]<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;150px<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[lineados]<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;150px<br>
+                </p>
+                <p>La sintaxis para que un elemento ocupe desde la fila uno a dos sería:</p>
+                <p>
+                    grid-rows: lineauno / lineados
+                </p>
+            </article>
+
+            <article>
+                <h2 id="short">Grid shorthands</h2>
+                <p>
+                    Combinación de varias propiedades:
+                </p>
+                <p>grid-template: row / columns (grid-container)</p>
+                <p>grid-template: area-unidad</p>
+                <p>grid:</p>
+            </article>
+
+            <article>
+                <h2 id="respo">Responsive design advanced</h2>
+                <p>
+                    Se ajusta al ancho y alto de la ventana grafia, dispositivo y orientacion de la pantalla
+                    tambien a la resolucion.
+                </p>
+                <p>
+                    all(apto para todos los dispositivos)<br>
+                    print(apto para imprimir)<br>
+                    screen(desinado a las pantallas)<br>
+                    speech(para sintetizados de voz)<br>
+                </p>
+                <p>
+                    Operadores and y or; para el and se presisa que ambas condiciones se cumplan
+                    para or solo una.
+                </p>
+                <p>
+                    Orientaciones ladscape y portrait
+                    landscape es para pc y portrait para celular.
+                </p>
+                <p>Sintaxis:</p>
+                <p>
+                    @media screen and (min-width: 400px) and (max-width: 650px){}
+                </p>
+            </article>
+            <article>
+                
+            </article>
+        </section>
+    </body>
+</html>

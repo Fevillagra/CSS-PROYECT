@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ES">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/style.css">
+        <title>CSS - Filter</title>
+    </head>
+    <body>
+        <header>
+            <h1>CSS - Filter</h1>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="../index.html">BÁSICO</a></li>
+                    <li><a href="./text.html">TEXT</a></li>
+                    <li><a href="./propertys.html">PROPIEDADES</a></li>
+                    <li><a href="./pyl.html">POSICIONAMIENTO & DISEÑO</a></li>
+                    <li><a href="./backgroundandgradients.html">GRADIENTS & BACKGROUNDS</a></li>
+                    <li><a href="./transitions.html">TRANSICIONES & TRANSFORMACIONES</a></li>
+                    <li><a href="#">FILTER</a></li>
+                    <li><a href="./display.html">DISPLAY</a></li>
+                    <li><a href="./responsive.html">RESPONSIVE DESIGN</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <h4>Contenidos</h4>
+            <ul class="page-nav">
+                <li><a href="#filter">filter</a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </section>
+
+        <section>
+            <article>
+                <h2 id="filter">Propiedad filter</h2>
+                <p>
+                    La propiedad CSS filter dota de efectos gráficos como el desenfoque o cambio de color 
+                    en la representación antes de que se muestre el elemento. Los filtros se utilizan comúnmente 
+                    para ajustar la representación de imágenes, fondos o bordes.
+                </p>
+                <h3>Función drop-shadow(w h b c)</h3>
+                <p>
+                    Aplica un efecto de sombra a la imagen. Una  sombra es realmente una versión desenfocada y 
+                    separada de la máscara alfa de la imagen, dibujada en un color particular, debajo de la misma.<br>
+                    Sintaxis: <b>filter: drop-shadow(w h b c);</b> width, height, blur y color.
+                    Si se establece más de una vez, la imagen tendra multiples sombras. Si es una imagen sin fondo 
+                    la sombra aparecera detras de la imagen en vez de caja.
+                </p>
+                <h3>Función grayscale(%)</h3>
+                <p>
+                    La función grayscale convierte una imagen a colo a una a grises, el único parametro que recibe
+                    define la proporción de la converción. <b>0%</b> es la imagen original y <b>100%</b> es la imagen 
+                    completamente en escala a grises.
+                </p>
+                <h3>Función sepia(%)</h3>
+                <p>
+                    Similar a la función grayscale, la función sepia altera el color del elemento. Donde <b>0%</b> 
+                    es el elemento con sus colores originales y <b>100%</b> es la imagen completamente en color sepia.
+                </p>
+                <h3>Función saturate()</h3>
+                <p>
+                    La función saturate controla la cantidad de saturación en el color del elemento, recibe un 
+                    único parámetro que define la proporción de saturación. El parámetro puede ser un porcentaje
+                    donde <b>0%</b> es una imagen insaturada(escala a grises) y <b>100%</b> es el elemento normal.
+                    La función también acepta valores sobre 100 y valores numericos donde 1 representa el 100%.
+                </p>
+                <h3>Función hue-rotate()</h3>
+                <p>
+                    Cambia el color del tono de la imagen a travéz de colores expresados en grados donde 0 grados
+                    y 360 grados es el color rojo.<br>
+                    sintaxis: hue-rotate(90deg)
+                </p>
+                <h3>Función invert(%)</h3>
+                <p>
+                    La función invert, invierte los colores del elemento haciendo los colores oscuros, claros y
+                    los claros oscuros. Recibe por parametro un porcentaje donde el <b>0%</b> es el elemento con sus 
+                    colores normales y el <b>100%</b> es el elemento con sus colores completamente invertidos
+                </p>
+                <h3>Función opacity(%)</h3>
+                <p>
+                    La función opacity permite cambiar la transparencia del elemento, <b>0%</b> es el elemento 
+                    completamente transparente y <b>100%</b> el elemento original.
+                </p>
+                <h3>Función brightness()</h3>
+                <p>
+                    La función brightness determina la cantidad de brillo en una imagen donde <b>0%</b> es 
+                    la imagen completamente negra, <b>100%</b> la imágen sin cambios y cualquier valor sobre 100
+                    realsara el brillo original de la imágen. También acepta valores numericos donde 100% es
+                    representado por 1.
+                </p>
+                <h3>Función contrast(%)</h3>
+                <p>
+                    La función contrast() determina la cantidad de contraste de un elemento, donde un valor 
+                    debajo de 100% decrementa el contraste y uno sobre 100% lo incrementa.
+                </p>
+                <h3>Función blur(px)</h3>
+                <p>
+                    La función de desenfoque aplica un efecto de desenfoque a una imagen.
+                    La función de blur solo tiene un parámetro, el radio , que define cuántos píxeles en la 
+                    pantalla se mezclan entre sí. (un valor mayor crea más desenfoque).
+                </p>
+                <h3>Multiples filtros</h3>
+                <p>
+                    Se le pueden asignar multiples funciones a una propiedad filter, para que estas funcionen
+                    deben estar separadas por un espacio.
+                </p>
+            </article>
+        </section>
+    </body>
+</html>

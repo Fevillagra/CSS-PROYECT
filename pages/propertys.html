@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ES">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/style.css">
+        <title>CSS - Propiedades</title>
+    </head>
+    <body>
+        <header>
+            <h1>CSS-Propiedades</h1>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="../index.html">BÁSICO</a></li>
+                    <li><a href="./text.html">TEXT</a></li>
+                    <li><a href="#">PROPIEDADES</a></li>
+                    <li><a href="./pyl.html">POSICIONAMIENTO & DISEÑO</a></li>
+                    <li><a href="./backgroundandgradients.html">GRADIENTS & BACKGROUNDS</a></li>
+                    <li><a href="./transitions.html">TRANSICIONES & TRANSFORMACIONES</a></li>
+                    <li><a href="./filters.html">FILTER</a></li>
+                    <li><a href="./display.html">DISPLAY</a></li>
+                    <li><a href="./responsive.html">RESPONSIVE DESIGN</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div>
+            <section>
+                <h4>Contenidos</h4>
+                <ul class="page-nav">
+                    <li><a href="#box">Box model</a></li>
+                    <li><a href="#box-sizing">box-sizing</a></li>
+                    <li><a href="#border">border</a></li>
+                    <li><a href="#outline">outline</a></li>
+                    <li><a href="#wyh">width & height</a></li>
+                    <li><a href="#fit">object-fit</a></li>
+                    <li><a href="#objposi">object-position</a></li>
+                    <li><a href="#lst">Estilo de listas</a></li>
+                    <li><a href="#table">Estilo de tablas</a></li>
+                    <li><a href="#links">Estilos de links(pseudoclases)</a></li>
+                    <li><a href="#cursor">Cursor</a></li>
+                    <li><a href="#box-shadow">box-shadow</a></li>
+                    <li><a href="#hsl">Colores & transparencia</a></li>
+                    <li><a href="#scroll">scroll-behavior</a></li>
+                </ul>
+            </section>
+        </div>
+        
+        <section>
+            <article>
+                <h2 id="box">Box Model CSS</h2>
+                <div class="container-boxflex">
+                    <div class="container-boximage">
+                        <img src="../images/caja.jpg" alt="box">
+                    </div>
+                </div>
+                <p>
+                    Todos los elementos de html pueden ser considerados como cajas. Las cajas están compuestas por
+                    <b>content, padding, border & margin.</b> . Hablar de box model es referirse al diseño y
+                    disposición del contenido. Cuando se le agrega altura o ancho a un div, 
+                    recae directamente sobre el tamaño del content. El orden de los valores asignados en las
+                    propiedades es el siguiente: <b>top, right, bottom & left</b>. Si se especifica el valor
+                    right pero no left, este último adquirira el mismo valor de right.
+                </p> 
+                <h3>Ancho y alto total</h3>
+                <p>
+                    Para calcular el ancho o alto total de un elemento será importante, sumar todos los valores
+                    correspondientes: <b>content, padding, border & margin</b>
+                    <br>
+                    Teniendo en cuenta que para el ancho se deberá tener en cuenta los valores left & right de 
+                    el padding, border, & margin. Para la altura deberá tenerse en cuenta lo mismo con la
+                    excepción de que en este caso los valores seran top & bottom. 
+                    <br>
+                    Cuando se le asigna altura y ancho mediante width y height está se agregara al area del 
+                    contenido. Cuando se le aplica un color de fondo mediante la propiedad background-color 
+                    también se pintara el padding.
+                    <br>
+                </p>
+                <h3></h3>
+                <p>
+                    Nota: Si un valor negativo se le fuese agregado a margin, por ejemplo margin-bottom: -10px;
+                    Este agregara margin a su lado contrario es decir a margin-top. También es posible especificar
+                    un valor inferior a uno y mayor a cero sin escribir el 0 ej: .4 es igual a 0.4
+                </p>
+            </article>
+
+            <article>
+                <h2 id="box-sizing">box-sizing</h2>
+                <p>
+                    La propiedad <b>box-sizing</b> puede ser usada para ajustar el siguiente comportamiento:<br>
+                    <b>content-box</b>: Es el comportamiento CSS por defecto para el tamaño de la caja (box-sizing). 
+                    Si se define el ancho de un elemento en 100 pixeles, la caja del contenido del elemento 
+                    tendrá 100 pixeles de ancho, y el ancho de cualquier borde o relleno ser añadirá al ancho final desplegado.<br>
+                    <b>border-box</b>: Le dice al navegador tomar en cuenta para cualquier valor que se especifique de borde o de relleno 
+                    para el ancho o alto de un elemento. Es decir, si se define un elemento con un ancho de 100 pixeles. 
+                    Esos 100 pixeles incluíran cualquier borde o relleno que se añadan, y la caja de contenido se encogerá para 
+                    absorber ese ancho extra. Esto típicamente hace mucho más fácil dimensionar elementos.
+                </p>
+            </article>
+
+            <article>
+                <h2 id="border">Propiedad border</h2>
+                <p>
+                    La propiedad border permite personalizar el borde de los elementos html.
+                    Siempre que se agregue un borde a un elemento deberá especificarse el tamaño
+                    el estilo y el color del mismo.
+                </p>
+                <p><b>
+                    Ej:
+                    <br>
+                    .p{ <br>
+                        &nbsp;&nbsp;width: 11%; <br>
+                        &nbsp;&nbsp;border: 5px solid green;<br>
+                    }
+                </b></p>
+                <br>
+                <p style="border: 5px solid green; width: 11%;">Hola Mundo!</p>
+                <p>
+                    Los valores de la propiedad border también pueden insertarse de manera separada
+                    mediante las propiedades: <b>border-width, border-style & border-color.</b>
+                    <br>
+                    Si la propiedad border-style no es agregada, ninguna de las otras tendrá efecto.
+                </p>
+                <h3>La propiedad border-style</h3>
+                <p>
+                    El valor predeterminado de la propiedad border-style es none. Los valores que pueden ser
+                    agregados a la propiedad son los siguientes.
+                    <ul>
+                        <li><b>none: Ninguno(valor por defecto)</b></li>
+                        <li><b>dotted: Estilo punteado.</b></li>
+                        <li><b>dashed: Valor de guiones.</b></li>
+                        <li><b>double: Compuesto por dos bordes delgados.</b></li>
+                        <li><b>
+                            groove: Un efecto 3D con iluminacion inferior derecha.
+                        </b></li>
+                        <li><b>ridge: Un efecto 3D con iluminacion superior izquierda.</b></li>
+                        <li><b>outset: Iluminacion inferior derecha </b></li>
+                        <li><b>inset: Iluminacion superior izquierda</b></li>
+                        <li><b>hidden: El borde esta escondido</b></li>
+                    </ul>
+                </p>
+                <h3>La propiedad border-radius</h3>
+                <p>
+                    La propiedad border-radius permite redondear las esquinas del elemento. Puede recibir 4 valores
+                    que serán asignados a las esquinas del elemento en este orden <b>superior izquierdo,
+                    superior derecho, inferior derecho e inferior izquierdo.</b> Para transformar el elemento en 
+                    un circulo el border-radius deberá ser la mitad de el ancho y altura(promedio de estos).
+                </p>
+                <p>
+                    Ej: <br>
+                    .div { <br>
+                        &nbsp;&nbsp;border-radius: 30px 0 30px 0; <br>
+                    }<br>
+                </p>
+                <div 
+                style="border-radius: 30px 0 30px 0; background-color: #ff0000; width:200px; height: 50px; text-align:center;">
+                    Hola Mundo!
+                </div>
+                <h3>bordes transparentes</h3>
+                <p>
+                    Se pueden establecer trasparencia en el color del borde con la propiedad alpha con rgba.
+                </p>
+                <p>
+                    Ej: <br>
+                    .div { <br>
+                        &nbsp;&nbsp;border: 20px solid rgba(0, 0, 0, 0.3); <br>
+                    }<br>
+                </p>
+                <div style="width:100px; height: 100px;border:20px solid rgba(0, 0, 0, 0.3); background: url(../images/montania.jpg); background-size: 100px 100px">
+                    Hola Mundo!
+                </div>
+            </article>
+
+            <article>
+                <h2 id="outline">Propiedad outline</h2>
+                <p>
+                    La propiedad CSS outline es una forma reducida para establecer una o más de las propiedades 
+                    individuales de contorno<b> outline-style, outline-width y outline-color</b> en una sola declaración.
+                    En la mayoría de los casos el uso de este atajo es preferible y más conveniente.<br>
+                    Outline funciona igual que la propiedad border con la diferencia de que el borde generado por 
+                    outline no ocupa espacio.<br>
+                    Si el box-sizing esta en border box; el borde no será tenido en cuenta. El borde no es 
+                    considerado como parte de la caja.
+                </p>
+            </article>
+
+            <article>
+                <h2 id="wyh">Propiedades width and height</h2>
+                <p>
+                    Las propiedades <b>width</b> and <b>height</b> pueden ser asignadas mediante porcentajes o pixeles.
+                    Tambien pueden especificarse valores mínimos o máximos mediante las propiedades:
+                    <b>min-width, max-width, min-height y max-height.</b>
+                </p>
+                <p>
+                    Si la propiedad <b>width</b> está seteada al 100%(ancho total de la pantalla) y se le 
+                    asigna un <b>máx-width</b> de 1500px (por ejemplo), el elemento no irá a más aunque se agrande 
+                    la pantalla más alla de eso. Nota: el texto se irá acomodando en una línea si esta en más de una línea.
+                    (Si el elemento es de bloque no hace falta setearlo).
+                   <br>
+                    Si hay un <b>min-width</b> de 300px por ejemplo y el <b>width</b> seteado al 100% 
+                    una vez alcanzado valores inferiores a 300px los elementos en su interior seguiran achicandose
+                    aunque los valores sean inferiores a 300px, aunque no cambiaran su posicionamiento ni agregaran
+                    scroll.(Si el elemento es de bloque no hace falta setearlo). En caso de que el <b>min-width</b>
+                    sea superior al tamaño de la pantalla se creara scroll.
+                </p>
+            </article>
+
+            <article>
+                <h2 id="fit">Propiedad object-fit</h2>
+                <p>
+                    La propiedad CSS object-fit indica cómo el contenido de un elemento reemplazado, por ejemplo 
+                    elemento img o video, debería redimensionarse para ajustarse a su contenedor.
+                </p>
+                <h3>Valores:</h3>
+                <ul>
+                    <li>
+                        <b>contain</b>
+                        <p>
+                            :El contenido reemplazado está dimensionado para mantener su relación de aspecto mientras 
+                            se ajusta dentro del cuadro de contenido del elemento: su tamaño de objeto concreto se 
+                            resuelve como una restricción de contenido contra el ancho y la altura utilizados del 
+                            elemento.
+                        </p>
+                    </li>
+                    <li>
+                        <b>cover</b>
+                        <p>
+                            :El contenido reemplazado se dimensiona para mantener su relación de aspecto mientras 
+                            llena el cuadro de contenido completo del elemento. Si la relación de aspecto del objeto 
+                            no coincide con la relación de aspecto de su caja, entonces el objeto se recortará para 
+                            que se ajuste.
+                        </p>
+                    </li>
+                    <li>
+                        <b>fill</b>
+                        <p>
+                            :Modifica el tamaño del elemento remplazado para llenar el cuadro de contenido. 
+                            El objeto completo ocupará todo el espacio de la caja. Si el tamaño del elemento 
+                            no concuerda con el de su caja, se estirará para llenarlo.
+                        </p>
+                    </li>
+                    <li>
+                        <b></b>
+                        <p></p>
+                    </li>
+                    <li>
+                        <b>none</b>
+                        <p>:El contenido reemplazado no se redimensiona.</p>
+                    </li>
+                    <li>
+                        <b>scale-down</b>
+                        <p>:El contenido se dimensiona como si none o contain estuvieran especificados, 
+                            lo que resultaría en un tamaño de objeto concreto más pequeño.
+                        </p>
+                    </li>
+                </ul>
+            </article>
+            
+            <article>
+                <h2 id="objposi">Propiedad object-position</h2>
+                <p>
+                    La propiedad object-position determina el alineamiento del elemento dentro de la caja.
+                </p>
+                <p>
+                    Valores: Este es un valor de cuatro que representa una posición en 2D con respecto a los 
+                    bordes de la caja. Posiciones Relativas o absolutas pueden presentar compensaciones. 
+                    Tenga en cuenta que la posición puede ser establecida fuera de la caja. 
+                    Pueden ir bottom, top, left & right. Tambien medidas como px, em y rem.
+                    Puede recibir valores negativos.
+                </p>
+            </article>
+
+            <article>
+                <h2 id="lst">Propiedad list-style-type</h2>
+                <p>
+                    La propiedad list-style-type establece diferentes tipos marcadores para los items de la lista.
+                </p>
+                <p>En el caso de las listas ordenadas pueden ser números o letras.</p>
+                <p>
+                    Valores para listas con orden:
+                    <br>
+                    <b>lower-alpha</b> : alfabetico.
+                    <br>
+                    Valores para listas sin orden: 
+                    <br>
+                    <b>none</b> : ningún ítem.
+                    <br>
+                    <b>circle</b> : circulo.
+                    <br>
+                    <b>square</b> : cuadrado
+                </p>
+                <h3>Propiedades list-style-image & list-style-position</h3>
+                <p>
+                    La propiedad list-style-image establece una imagen como márcador con el valor 'url("ruta")'. 
+                    Mientras que list-style-position especifica si el marcador estara dentro o fuera de la caja
+                    del elemento.
+                    <br>
+                    Valores para position:
+                    <br>
+                    <b>inside</b> : En la misma caja que el item.
+                    <br>
+                    <b>outside</b> : Fuera de la caja del item.
+                </p>
+                <h3>La propiedad list-style</h3>
+                <p>
+                    La propiedad list-style integra las 3 propiedades list-style-type, list-style-position & 
+                    list-style-image.
+                    <br>
+                    Ej: {list-style: square outside none;}
+                </p>
+            </article>
+
+            <article>
+                <h2 id="table">Propiedades de tablas</h2>
+                <p>
+                    Propiedades:
+                </p>
+                <h3>Propiedades border-collapse & border-space</h3>
+                <p>
+                    La propiedad border-collapse determina si los bordes de la tabla se contraen o separan 
+                    de una manera determinada. Si los borders están separados, la propiedad border-space
+                    especifica la cantidad de espacio. El primer valor de border spacing es el separado entre
+                    casillas horizontal en px y el segundo el separado vertical. Mientras que los valores que
+                    pueden ser asignados a border collapse son <b>separate,inherit & collapse </b>
+                </p>
+                <p>
+                    Ej:
+                    <br>
+                    .tab{ <br>
+                        &nbsp;&nbsp;border-collapse: separate;<br>
+                        &nbsp;&nbsp;border-spacing: 20px 40px;<br>
+                    }
+                </b></p>
+                <br>
+                <table border="1" style="border-collapse: separate; border-spacing: 20px 40px;">
+                    <tr>
+                        <td>Hola Mundo!</td>
+                        <td>Hola Mundo!</td>
+                    </tr>
+                    <tr>
+                        <td>Hola Mundo!</td>
+                        <td>Hola Mundo!</td>
+                    </tr>
+                </table>
+                <h3>Propiedad caption-side</h3>
+                <p>
+                    La propiedad caption especifica el lado en el cual estará el texto de la etiqueta <b>caption</b>
+                    los valores que puede recibir son  <b>bottom y top</b>.
+                </p>
+                Ej:
+                <br>
+                .tab{ <br>
+                    &nbsp;&nbsp;border-collapse: collapse;<br>
+                    &nbsp;&nbsp;border-spacing: 20px 20px;<br>
+                    &nbsp;&nbsp;caption-side: bottom; <br>
+                }
+                </b></p>
+                <table border="1" style="border-collapse: separate; border-spacing: 20px 20px; caption-side: bottom;">
+                    <caption>Hola Mundo!</caption>
+                    <tr>
+                        <td>Hola Mundo!</td>
+                        <td>Hola Mundo!</td>
+                    </tr>
+                    <tr>
+                        <td>Hola Mundo!</td>
+                        <td>Hola Mundo!</td>
+                    </tr>
+                </table>
+                <h3>Propiedad empty-cells</h3>
+                <p>
+                    La propiedad empty-cells especifica si mostrar o no los bordes y el fondo de las celdas vacías.
+                    Los valores que puede recibir son: <br> 
+                    <b>show</b>: Los bordes de una celda vacía se muestran <br>
+                    <b>hide</b>: Los bordes no se muestran
+                </p>
+                Ej:
+                <br>
+                .tab{ <br>
+                    &nbsp;&nbsp;border-collapse: collapse;<br>
+                    &nbsp;&nbsp;border-spacing: 20px 20px;<br>
+                    &nbsp;&nbsp;empty-cells: hide; <br>
+                }
+                <table border="1" style="border-collapse: separate; border-spacing: 20px 20px; empty-cells: hide;">
+                    <tr>
+                        <td>Hola Mundo!</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Hola Mundo!</td>
+                        <td>Hola Mundo!</td>
+                    </tr>
+                </table>
+                <h3>Propiedad table-layout</h3>
+                <p>
+                    La propiedad table-layout especifica como sera calculado el ancho de las celdas. Si no se 
+                    establece explicitamente el valor será <b>auto</b>, siendo proporcional el ancho
+                    de la celda al ancho del contenido o <b>fixed</b> cuando el ancho de la columna no está especificado, 
+                    el ancho del contenido no modifica el ancho de la celda.
+                </p>
+                <p>
+                .tab{ <br>
+                    &nbsp;&nbsp;table-layout:fixed;<br>
+                    &nbsp;&nbsp;border: 1px solid grey;<br>
+                    &nbsp;&nbsp;border-collapse: separate;<br>
+                }
+                </p>
+                <table style="table-layout:fixed; width:100%; border-collapse: separate;">
+                    <tr>
+                    <td width="10%" style="border: 1px solid grey;">500.000.000.000.000</td>
+                    <td width="90%" style="border: 1px solid grey;">20.000</td>
+                    </tr>
+                </table>
+            </article>
+
+            <article>
+                <h2 id="links">Estilos de links(pseudoclases)</h2>
+                <p>
+                    A diferencia de los demás elementos, los links, pueden tener estilos diferentes 
+                    dependiendo del estado en el que se encuentren. Esto se optiene con las pseudoclases.
+                    <br>
+                    <ul>
+                        <li><b>a:link</b><p>:Define el estilo normal de los links no visitados.</p></li>
+                        <li><b>a:visited</b><p>:Define el estilo de los links que ya fueron visitados.</p></li>
+                        <li><b>a:active</b><p>:Define el estilo cuando se hace click en ellos.</p></li>
+                        <li><b>a:hober</b><p>:Define el estilo cuando el mouse reposa sobre el elemento.</p></li>
+                    </ul>
+                    
+                    El estilo de texto sera el mismo que para text. <br>
+
+                    <b>Reglas de orden:</b>
+                    <p>a:link y a:visited deben establecerse primero que a:hover y a:hover primero que a:active.</p>
+                    <br>
+                    <br>
+                    <ol>
+                        <li><p>link&visited</p></li>
+                        <li><p>hover</p></li>                            
+                        <li><p>active</p></li>
+                    </ol>
+                </p>
+            </article>
+
+            <article>
+                <h2 id="cursor">Estilo de cursor</h2>
+                <p>
+                    Css permite configurar el estilo mediante el cuál el cursor es mostrado. El nombre de 
+                    la propiedad empleada es <b>cursor</b> y los valores que se pueden asignar a la propiedad 
+                    son: <br>
+                    <ul>
+                        <li><p><b>help</b>: El cursor normal con un signo de interrogación</p></li>
+                        <li><p><b>default</b>: Valor por defecto, cursor normal.</p></li>
+                        <li><p><b>crosshair</b>: Cruz.</p></li>
+                        <li><p><b>pointer</b>: Mano seleccionadora.</p></li>
+                    </ul>
+                </p>
+                <p>
+                    Otros:
+                </p>
+                <div class="cursor-container">
+                    <img src="../images/cursor.png">
+                </div>
+            </article>
+
+            <article>
+                <h2 id="box-shadow">Propiedad box-shadow</h2>
+                <p>
+                    La propiedad box-shadow aplica sombra a los elementos. El primer valor corresponde a la sombra 
+                    horizontal, en caso de ser positivo será a la derecha, si es negativo, a la izquierda.
+                    El segundo valor corresponde a la sombra vertical, en caso de ser positivo será para la parte
+                    inferior, si es positivo, a la parte superior. El tercer valor corresponde al color de la 
+                    sombra. El cuarto valor corresponde a la cantidad de desenfoque y el quinto valor a la 
+                    distancia de la sombra.
+                    Para que parezca más realista mientras más lejos la sombra, más desenfoque
+                </p>
+                <p>
+                    Ej: <br>
+                    .div { <br>
+                        &nbsp;&nbsp; box-shadow: 5px 5px 5px 5px #ff0000;<br>
+                    }
+                </p>
+                <br>
+                <div style="width:200px; height: 100px; box-shadow: 5px 5px 5px 5px #ff0000">
+                    Hola Mundo!
+                </div>
+                <h3>Estilos de sombras</h3>
+                <p>
+                    Se pueden agregar multiples sombras siempre y cuando el grupo de valores de cada sombra este 
+                    separado por una coma. Para que la sombra esté en el interior de la caja se usa el valor 
+                    <b>inset</b> antes de los valores numericos de la sombra. En caso de que se utilize más de 
+                    una sombra, la última especificada estará detras de las demás sombras.
+                </p>
+                <p>
+                    Ej: <br>
+                    .div { <br>
+                        &nbsp;&nbsp; width: 200px;<br>
+                        &nbsp;&nbsp; height: 100px<br>
+                        &nbsp;&nbsp; box-shadow: inset 10px 10px 5px red, inset -10px -10px 5px red,
+                        0 0 10px 4px #FF6347, 0 0 10px 30px #FFDAB9, 30px 0 20px 30px #B0E0E6;<br>
+                    }
+                    <br><br><br>
+                </p>
+                <div style="width: 200px; height: 100px; box-shadow:  inset 10px 10px 5px red, inset -10px -10px 5px red,
+                0 0 10px 4px #FF6347, 0 0 10px 30px #FFDAB9, 30px 0 20px 30px #B0E0E6;text-align:center; vertical-align: middle;">
+                    <p style="text-align:center; vertical-align: middle;">
+                        Hola Mundo!
+                    </p>
+                </div>
+            </article>
+
+            <article>
+                <h2 id="hsl">Colores & transparencia</h2>
+                <h3>rgba</h3>
+                <p>
+                    El parametro <b>a</b> define la transparencia mientras que los valores rgb siguen comportandose
+                    de la misma manera que en rgb normal. El parametro alpha es un número entre <b>
+                    0.0 (total transparencia) y 1.0(opacidad total) </b>.
+                    <p>
+                        Sintaxis: rgba(red, green, blue, alpha).
+                    </p>
+                </p>
+                <h3>hsl</h3>
+                <p>
+                    El valor hsl, por sus siglas(hue[tono], saturation[saturación] y lightness[luminancia]),
+                    sirven para especificar colores de un elemento al igual los que los valores rgb, con la
+                    diferencia de que se emplea un circulo cromatico que va desde los 0 grados(color rojo)
+                    hasta los 360 completando la vuelta y volviendo al color rojo; correspondiendo este al 
+                    primer valor <b>"h[tono]"</b>.
+                    <br>
+                    Valores de referencia <b>"h"</b>: 0 rojo, 60 amarillo, 120 verde, 180 cyan, 240 azul & 300 magenta.
+                    <br>
+                    Valores <b>"s"</b>: Varían del 0%(gris) a 100% color puro.
+                    <br>
+                    Valores <b>"l"</b>: Varían desde 0%(negro, nada de luz) hasta 100%(blanco, luz maxima); 
+                    Color puro al 50%
+                </p>
+                <h3>hsla</h3>
+                <p></p>
+                <p>
+                    Sintaxis 1: <b> propiedad: hsla( h, s, l, a)</b> <br>
+                    Sintaxis 2: <b> propiedad: hsla( h s l /a)</b>
+                </p>
+            </article>
+            <aricle>
+                <h2 id="scroll">Propiedad scroll-behavior</h2>
+                <p>
+                    La propiedad CSS scroll-behavior especifica el comportamiento del 
+                    desplazamiento para un elemento con desplazamiento, cuando éste se produce 
+                    debido a la navegación o a APIs CSSOM. Otros desplazamientos, p.ej. 
+                    aquellos realizados por el usuario, no se ven afectados por esta propiedad.
+                    Cuando esta propiedad está especificada en el elemento raíz, se aplica 
+                    al viewport.
+                </p>
+                <p>
+                    Valores:<br>
+                    auto<br>
+                    La caja de desplazamiento realiza el desplazamiento instantáneamente.<br>
+                    smooth<br>
+                    La caja se desplaza suavemente, utilizando una función de tiempo 
+                    definida por el agente de usuario (user-agent) sobre un período de 
+                    tiempo también definido por éste. Los agentes de usuario seguirán las 
+                    convenciones de su propia plataforma, en caso de que existan.
+                </p>
+            </aricle>
+            <article>
+                <h2>Propiedad user-selected</h2>
+                <p>
+                    La propiedad CSS user-select controla si el usuario puede seleccionar el texto. 
+                    Esto no tiene ningún efecto en el contenido cargado bajo chrome, excepto en cuadros de texto.
+                </p>
+                <p>
+                    Valores:<br>
+                    none: <br>
+                    El texto y sus sub elementos no son seleccionables. Tenga en cuenta que el objeto Selection puede contener estos elementos.
+                    auto
+                    El valor calculado auto se determina de la siguiente manera: En los pseudo elementos ::before y ::after, el valor calculado es none
+                    Si el elemento es un elemento editable, el valor calculado es contain
+                    De lo contrario, si el valor calculador de user-select en la matriz de este elemento es all, el valor calculado es all
+                    De lo contrario, si el valor calulado de user-select  en la matriz de este elemento es  none, el valor calculado es none
+                    De lo contrario, el valor calculado es text<br>
+                    text<br>   
+                    El texto puede ser seleccionado por el usuario.<br>
+                    all<br>
+                    En el editor HTML, si  se realiza doble-click o click-contextual en el subelemento, se seleccionará el antecesor más alto de el valor.
+                    contain
+                    Permite que la selección comience dentro del elemento; sin embargo, la selección estará contenida por los límites de ese elemento.
+                </p>
+            </article>
+        </section>
+    </body>
+</html>

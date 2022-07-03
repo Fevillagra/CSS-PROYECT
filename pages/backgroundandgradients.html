@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ES">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/style.css">
+        <title>CSS - Gradients & Backgrounds</title>
+    </head>
+    <body>
+        <header>
+            <h1>CSS - Gradients & Backgrounds</h1>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="../index.html">BÁSICO</a></li>
+                    <li><a href="./text.html">TEXT</a></li>
+                    <li><a href="./propertys.html">PROPIEDADES</a></li>
+                    <li><a href="./pyl.html">POSICIONAMIENTO & DISEÑO</a></li>
+                    <li><a href="#">GRADIENTS & BACKGROUNDS</a></li>
+                    <li><a href="./transitions.html">TRANSICIONES & TRANSFORMACIONES</a></li>
+                    <li><a href="./filters.html">FILTER</a></li>
+                    <li><a href="./display.html">DISPLAY</a></li>
+                    <li><a href="./responsive.html">RESPONSIVE DESIGN</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <h4>Contenidos</h4>
+            <ul class="page-nav">
+                <li><a href="#bac">background</a></li>
+                <li><a href="#bgc">background-color</a></li>
+                <li><a href="#bgi">background-image</a></li>
+                <li><a href="#gradiantes">Degradados(gradients)</a></li>
+                <li><a href="#background-size">background-size</a></li>
+                <li><a href="#background-clip">background-clip</a></li>
+                <li><a href="#rep">background-repeat</a></li>
+                <li><a href="#opa">opacity</a></li>
+                <li><a href="#origin">background-origin</a></li>
+            </ul>
+        </section>
+        <section>
+            <article>
+                <h2 id="bac">Propiedad background</h2>
+                <p>
+                    La propiedad background es un atajo para definir los valores individuales del fondo en una única regla CSS. 
+                    Se puede usar background para definir los valores de una o de todas las propiedades siguientes: 
+                    <b>background-attachment, color, image, position, repeat</b>.
+                </p>
+            </article>
+            <article>
+                <h2 id="bgc">Propiedad background-color</h2>
+                <p>
+                La propiedad background-color se usa para darle color al fondo de un elemento, pueden usarse
+                nombres de colores, rgb o valores hexadecimales. Se aconseja no usar nombres ya que el color
+                será asignado por el navegador, y dependiendo de este podra variar si el navegador varia.
+                </p>
+                <p>
+                Ej:
+                <br>
+                .p{ <br>
+                    &nbsp;&nbsp;background-color: #ff0000;<br>
+                }
+            </b></p>
+            <br>
+            <p style="background-color: #ff0000;">Hola Mundo!</p>
+            </article>
+
+            <article>
+                <h2 id="bgi">Propiedad backgorund-image</h2>
+                <p>
+                    La propiedad backgorund-image establece una o varias imagenes de fondo a un elemento.
+                    Dentro de la url de la imagen se aceptan rutas relativas y absolutas. De forma predeterminada
+                    se coloca una imagen de fondo en la parte superior izquierda del elemento que se repite tanto
+                    horizontal como vertcialmente sobre el elemento. 
+                    <br>
+                    Para establecer más de una imagen deben ser separadas por comas. Las demás imagenes
+                    especificadas seran usadas de respaldo en caso de que no carguen la primera.
+                </p>
+                <p>
+                    Ej:
+                    <br>
+                    .div{ <br>
+                        &nbsp;&nbsp;height: 300px;<br>
+                        &nbsp;&nbsp;backgorund-image: url("montania.jpg");<br>
+                    }
+                </p>
+                <br>
+                <div style="height: 200px; background-image: url('../images/montania.jpg')">
+                    <p style="color:white">Hola mundo!</p>
+                </div>
+                <h3>propiedad background-repeat</h3>
+                <p>
+                    La propiead background-repeat especifica como va repetirse la imágen de fondo; la imágen
+                    puede repetirse a lo largo del eje horizontal, eje vertical o no repetirse en absoluto.
+                    <br>
+                    Valores:
+                    <br>
+                    Para repetir tanto horizontal como verticalmente: <b>repeat</b>
+                    <br> 
+                    Para repetir horizontalmente: <b>repeat-x</b>
+                    <br>
+                    Para repetir verticalmente: <b>repeat-y</b>
+                    <br>
+                    Para no repetirla en absoluto: <b>no-repeat</b>
+                    <br>
+                    Para adquirir el mismo fondo que el elemento principal y su manera de mostrarlo: <b>inherit</b>
+                </p>
+                <h3>propiedad background-attachment</h3>
+                <p>
+                    La propiedad background-attachment establece si la imagen de fondo permanecera quieta
+                    con el scroll o se movera al compás del movimiento del scroll.
+                    <br>
+                    Valores:
+                    <br>
+                    <b>fixed </b> Aunque intentes mover la página con el scroll la imagen no se movera. 
+                    <b>inherit </b> Hereda el valor del elemento principal y su forma de mostrarlo.
+                    <b>scroll</b> El movimiento del scroll afecta tanto al contenido como al scroll.
+                </p>
+            </article>
+
+            <article>
+                <h2 id="gradiantes">Degradados</h2>
+                <p>
+                    Los degradados permiten mostrar transiciones suaves entre uno o más colores específicos.
+                    CSS tiene dos tipos de degradados <b>linear-gradient</b> & <b>radial-gradient</b>.
+                </p>
+                <h3>Valor linear-gradient</h3>
+                <p>
+                    El valor linear-gradient permite crear un degradado lineal, requiriendo al menos dos valores
+                    de colores por parametro que tendran una transición suave entre uno y oro. También se pueden 
+                    establecer puntos de partida, dirección, angulo, junto con el efecto del degradado.
+                    Los valores introducidos pueden ser más de dos colores y empezará desde arriba con el primer color
+                    en orden hacía los otros. Si se quiere añadir una dirección, los valores serán <b> to left, to right,
+                    to top y to bottom.</b> Tambíen seran admitidas esquinas usando combinación de dos direcciónes. Ej:
+                    <b>to top right.</b>
+                    Empezando por el primer color desde el lado contrario de la dirección elegida.
+                    Por defecto los colores tienen "to bottom".
+                    Tambien puede ser definido en que porcentaje de la imagen donde "para" el colo y continua el otro 
+                    mediante porcentajes, tambien pueden usarse px o em.
+
+                </p>
+                <p>
+                    Sintaxis: <b>background-image: linear-gradient: (DeepSkyBlue, Black); </b>
+                </p>
+                <p>
+                    Ej:
+                    <br>
+                    .div{ <br>
+                        &nbsp;&nbsp;width: 300px;<br>
+                        &nbsp;&nbsp;height: 100px;<br>
+                        &nbsp;&nbsp;background-image: linear-gradient: (to top right,DeepSkyBlue 33%, Black 66%, red 100%);<br>
+                    }
+                </p>
+                <div style="width:300px; height: 100px; background-image:linear-gradient(to top right,DeepSkyBlue 33%, Black 66%, red 100%); color: white;">
+                    Hola Mundo!
+                </div>
+
+                <h3>Angulo del degradado</h3>
+                <p>
+                    Una alternativa para la dirección es usar angulos. Lo que otorga una mayor libertad a la 
+                    definición de la dirección del degradado. Para emplear el angulo se unsan valores <b>"deg"</b>. 
+                    El ángulo es especificado como un ángulo entre una línea vertical y la línea del gradiente,
+                    contando en el sentido horario.
+                </p>
+                <p>
+                    Ej:
+                    <br>
+                    .div{ <br>
+                        &nbsp;&nbsp;width: 300px;<br>
+                        &nbsp;&nbsp;height: 100px;<br>
+                        &nbsp;&nbsp;background-image: linear-gradient: (45deg, DeepSkyBlue, red);<br>
+                    }
+                </p>
+                <div style="width:300px; height: 100px; background-image:linear-gradient(45deg, DeepSkyBlue, red); color: white;">
+                    Hola Mundo!
+                </div>
+                <h3>repeating-linear-gradient</h3>
+                <p>
+                    Para repetir el patron de degradado se usa el valor repeating-linear-gradient, al final de los valores 
+                    de colores se establece un valor en pixeles de cuanto medira el degradado para repetirse.
+                </p>
+                <p>
+                    Ej:
+                    <br>
+                    .div{ <br>
+                        &nbsp;&nbsp;width: 300px;<br>
+                        &nbsp;&nbsp;height: 100px;<br>
+                        &nbsp;&nbsp;background-image: repeating-linear-gradient: (DeepSkyBlue, red 20px);<br>
+                    }
+                </p>
+                <div style="width:300px; height: 100px; background-image:repeating-linear-gradient(45deg, DeepSkyBlue, red 20px); color: white;">
+                    Hola Mundo!
+                </div>
+                <h3>Valor radial-grandient</h3>
+                <p>
+                    El valor radial-gradient permite crear un degradado radial la forma de anotar es similar a la de 
+                    linear-gradient, excepto que se puede especificar la forma del degradado y su 
+                    tamaño. Las paradas de color se definen de la misma manera que en linear-gradient.
+                </p>
+                <p>
+                    Ej:
+                    <br>
+                    .div{ <br>
+                        &nbsp;&nbsp;width: 300px;<br>
+                        &nbsp;&nbsp;height: 300px;<br>
+                        &nbsp;&nbsp;background-image: radial-gradient: ( DeepSkyBlue 10%, red 15%, green);<br>
+                    }
+                </p>
+                <div style="width:300px; height: 300px; background-image:radial-gradient(DeepSkyBlue 10%, red 15%, green ); color: white;">
+                    Hola Mundo!
+                </div>
+                <p>
+                    Ej:
+                    <br>
+                    .div{ <br>
+                        &nbsp;&nbsp;width: 300px;<br>
+                        &nbsp;&nbsp;height: 300px;<br>
+                        &nbsp;&nbsp;background-image: radial-gradient: ( circle, DeepSkyBlue 10%, red 15%, green);<br>
+                    }
+                </p>
+                <div style="width:300px; height: 300px; background-image:radial-gradient(circle, DeepSkyBlue 10%, red 15%, green ); color: white;">
+                    Hola Mundo!
+                </div>
+            </article>
+
+            <article>
+                <h2 id="background-size">Propiedad background-size</h2>
+                <p>
+                    La propiedad background-size permite establecer el tamaño de las imagenes de fondo.
+                    Los valores que puede recibir son porcentajes y valores lengths. Existen dos valores
+                    más que puede recibir la propiedad <b>contain</b> y <b>cover</b>. El valor <b>contain</b>
+                    modifica la imagen para ajustarla a su contenedor, en otras palabras crecera o se
+                    reducira proporcionalmente, pero el ancho y altura no excederan las dimenciones del 
+                    contenedor. El valor <b>cover</b> escala la imagen al mayor tamaño posible sin estirarla. 
+                    Si las proporciones de la imagen difieren de las del elemento, 
+                    es recortada vertical u horizontalmente para que no quede un espacio vacío.
+                </p>
+                <p>
+                    Ej:
+                    <br>
+                    .div{ <br>
+                        &nbsp;&nbsp;width: 200px;<br>
+                        &nbsp;&nbsp;height: 150px;<br>
+                        &nbsp;&nbsp;border: 1px solid #000;<br>
+                        &nbsp;&nbsp;background: url(../images/cross.jpg) no-repeat 50% 50%;<br>
+                        &nbsp;&nbsp;background-size: 100px 100px<br>
+                    }
+                </p>
+                <div style="width: 200px; height: 150px; border: 1px solid #000; background: url(../images/cross.jpg) no-repeat 50% 50%; background-size: 100px 100px">
+                    Hola Mundo!
+                </div>
+            </article>
+
+            <article>
+                <h2 id="background-clip">Propiedad background-clip</h2>
+                <p>
+                    La propiedad background-clip define hasta donde se extenderá el fondo. La propiedad recibirá 
+                    3 valores, <b>border-box</b> (predeterminado) el fondo se extiende hasta el <b>borde</b>
+                    exterior del elemento, <b>padding-box</b> el fondo se extiende hasta el <b>padding(inclusive)</b>
+                    sin llegar al <b>borde</b> y  <b>content-box</b> el fondo solo se extiende en el area del
+                    contenido.
+                </p>
+            </article>
+
+            <article>
+                <h2 id="rep">Propiedad background-repeat</h2>
+                <p>
+                    Para establecer multiples fondos se emplea una lista de valores en cada propiedad separados por 
+                    una coma. La primeras siempre tendran prioridad para superponerse.
+                </p>
+                <p>
+                    Ej: <br>
+                    .div { <br>
+                        width: 100%;<br>
+                        height: 500px;<br>
+                        background-image: url("../images/cross.jpg"), url("../images/montaina.jpg");<br>
+                        background-position: right bottom, left top;<br>
+                        background-repeat: no-repeat;<br>
+                    } 
+                </p>
+                <div style="width: 100%; height: 500px;background-size: 100px 100px, 100% 100%; background-image: url('../images/cross.jpg'), url('../images/montania.jpg'); background-position: right bottom, left top;background-repeat: no-repeat;">
+                </div>
+            </article>
+
+            <article>
+                <h2 id="opa">Propiedad opacity</h2>
+                <p>
+                    La propiedad opacity agrega opacidad o transparencia a cualquier elemento. Los valores varían entre 
+                    0.0 totalmente transparente a 1.0 totalmente opaco.
+                </p>
+                <p>
+                    Ej: <br>
+                    .div { <br>
+                        background-image: url('../images/montania.jpg');<br>
+                        opacity: 0.3;<br>
+                    } 
+                </p>
+                <div style="width:100%; height:200px; background-image: url('../images/montania.jpg'); opacity: 0.3;">
+                </div>
+            </article>
+
+            <article>
+                <h2 id="ori">Propiedad background-origin</h2>
+                <p>
+                    La propiedad background-origin especifica el área de origen de un fondo o imagen en 
+                    determinada caja. para que la propiedad background-position calcule la posición de 
+                    inicio de un fondo o imagen definida por la propiedad background-image.
+                    Valor por defecto: padding-box
+                </p>
+                <p>Valores:</p>
+                <ul>
+                    <li>
+                        <b>border-box</b>
+                        <p>
+                            El fondo se extiende al borde exterior (por debajo del borde en el orden z),
+                            la posición es relativa al borde de la caja.
+                        </p>
+                    </li>
+                    <li>
+                        <b>padding-box</b>
+                        <p>
+                            El fondo se extiende al borde exterior del padding, la posición es relativa al padding de la caja.
+                        </p>
+                    </li>
+                    <li>
+                        <b>content-box</b>
+                        <p>
+                            El fondo se extiende dentro del (recortado al) contenido de la caja, 
+                            la posición es relativa al contenido de la caja.
+                        </p>
+                    </li>
+                </ul>
+            </article>
+
+            <article>
+                <h2>Propiedad background-position</h2>
+                <p>
+                    background-position define la posición inicial de la imagen de fondo especificada.
+                </p>
+                <p>
+                    porcentaje<br> 
+                        Con el par de valores '0% 0%', la esquina izquierda de la imagen es alineada 
+                        con la esquina izquierda del borde del espaciado de la caja. Un valor '100% 100%'
+                        pone la esquina inferior de la imagen en la esquina inferior del área de espaciado.
+                        Con un valor '14% 84%', el punto a 14% a la derecha y 84% abajo de la imagen es colocado 
+                        en el punto al 14% derecha y 84% abajo del área de espaciado.
+                </p>
+                <p>
+                    length <br>
+                        con un valor '2cm 1cm', la esquina superior izquierda de la imagen es colocada a 2 cm a 
+                        la derecha y a 1cm debajo de la esquina superior izquierda del área de espaciado.
+                </p>
+                <p>
+                    Tambien acepta los siguientes valores: bottom, top, right y left y sus convinaciones.
+                </p>
+            </article>
+        </section>
+    </body>
+</html>

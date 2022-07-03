@@ -1,0 +1,356 @@
+ <!DOCTYPE html>
+ <html lang="ES">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/style.css">
+        <title>CSS - Posicionamiento y Diseño</title>
+    </head>
+    <body>
+        <header>
+            <h1>CSS-Posicionamiento & Diseño</h1>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="../index.html">BÁSICO</a></li>
+                    <li><a href="./text.html">TEXT</a></li>
+                    <li><a href="./propertys.html">PROPIEDADES</a></li>
+                    <li><a href="#">POSICIONAMIENTO & DISEÑO</a></li>
+                    <li><a href="./backgroundandgradients.html">GRADIENTS & BACKGROUNDS</a></li>
+                    <li><a href="./transitions.html">TRANSICIONES & TRANSFORMACIONES</a></li>
+                    <li><a href="./filters.html">FILTER</a></li>
+                    <li><a href="./display.html">DISPLAY</a></li>
+                    <li><a href="./responsive.html">RESPONSIVE DESIGN</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section>
+            <h4>Contenidos</h4>
+            <ul class="page-nav">
+                <li><a href="#display">display</a></li>
+                <li><a href="#visibility">visibility</a></li>
+                <li><a href="#position">position</a></li>
+                <li><a href="#float">float</a></li>
+                <li><a href="#overflow">overflow</a></li>
+                <li><a href="#z-index">z-index</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <article>
+                <h2 id="display">Propiedad display</h2>
+                <p>
+                    Cada elemento dentro de una página web es un cuadrado rectangular la propiedad display determina
+                    como se comporta. Un elemento con la propiedad <b>block</b>( valor por defecto) 
+                    que ocupa todo el ancho disponible. Con saltos de línea antes y después.
+                </p>
+                <h3>display: block;</h3>
+                <p>
+                    Setear un elemento inline con block solo muestra como sera vizualisado mas no, modificara sus
+                    propiedades.
+                </p>
+                <p><b>
+                    Ej:
+                    <br>
+                    .span{ <br>
+                        &nbsp;&nbsp;display:block<br>
+                        &nbsp;&nbsp;background-color: red;<br>
+                    }
+                </b></p>
+                <br>
+                <span style="display: block; background-color: red;">Hola Mundo!</span>
+                
+
+                <h3>display: inline;</h3>
+                <p>
+                    Un elemento <b>inline</b> solo ocupara el ancho que necesita, es decir, el ancho de su contenido.
+                </p>
+                <p><b>
+                    Ej:
+                    <br>
+                    .p{ <br>
+                        &nbsp;&nbsp;display:inline<br>
+                        &nbsp;&nbsp;background-color: green;<br>
+                    }
+                <br>
+                    .p{ <br>
+                        &nbsp;&nbsp;display:inline<br>
+                        &nbsp;&nbsp;background-color: red;<br>
+                    }
+                </b></p>
+                <br>
+                <p style="display: inline; background-color: green">Hola </p>
+                <p style="display: inline; background-color: red"> Mundo!</p>
+
+                <h3>display: inline-block</h3>
+                <p>
+                    Es como una caja con display inline, con la diferencia que a esta puede establecersele un
+                    valor diferente al contenido en el ancho y alto.
+                </p>
+
+                <h3>display: table</h3>
+                <p>
+                    El elemento se comportara como una tabla.
+                </p>
+
+                <h3>display: inline-table</h3>
+                <p>
+                    El elemento se comportara como una tabla en linea.
+                </p>
+
+                <h3>display: list-item</h3>
+                <p>
+                    El elemento se comporta como si fuera una lista.
+                </p>
+
+                <h3>display: table-cell</h3>
+                <p>
+                    El elemento se comporta como la celda de una tabla.
+                </p>
+
+                <h3>display: none;</h3>
+                <p>
+                    La propiedad display none oculta el elemento, por lo que no no ocupara espacio. Por lo tanto
+                    la página se mostrara como si no estuviera ahí.
+                </p>
+                <p><b>
+                    Ej:
+                    <br>
+                    .p{ <br>
+                        &nbsp;&nbsp;display:none<br>
+                        &nbsp;&nbsp;background-color: green;<br>
+                    }
+                <br>
+                    .p{ <br>
+                        &nbsp;&nbsp;display:inline<br>
+                        &nbsp;&nbsp;background-color: red;<br>
+                    }
+                </b></p>
+                <br>
+                <p style="display: none; background-color: green">Hola </p>
+                <p style="display: inline; background-color: red"> Mundo!</p>
+
+                <h3>Otros</h3>
+                <p>
+                    Algunos más: list-item , table , table-cell , table-column , grid, etc.
+                </p>
+            </article>
+
+            <article>
+                <h2 id="visibility">Propiedad visibility</h2>
+                <p>
+                    La propiedad visibility especifica si un elemento será mostrado o no, con los valores 
+                    <b>visible</b> y <b>hidden</b>, esconder un elemento puede realizarse con la propiedad
+                    display none, sin embargo se observaran resultados diferentes. Mientras que con display: none;
+                    desaparece el elemento como si no existiera, con visibility seguirá ocupando espacio en la 
+                    página.
+                </p>
+                <p><b>
+                    Ej:
+                    <br>
+                    .p{ <br>
+                        &nbsp;&nbsp;display:inline<br>
+                        &nbsp;&nbsp;background-color: green;<br>
+                        &nbsp;&nbsp;visibility: hidden;<br>
+                    }
+                <br>
+                    .p{ <br>
+                        &nbsp;&nbsp;display:inline<br>
+                        &nbsp;&nbsp;background-color: red;<br>
+                    }
+                </b></p>
+                <br>
+                <p style="display: inline; background-color: green; visibility: hidden;">Hola </p>
+                <p style="display: inline; background-color: red"> Mundo!</p>
+            </article>
+
+            <article>
+                <h2 id="position">Propiedad position</h2>
+                <p>
+                    Las propiedades de posicionamiento permiten posicionar un elemento respecto al flujo de la 
+                    página. Se pueden colocar elementos uno detras de otro y especificar que debe suceder cuando
+                    el elemento de un contenido es demasiado grande. Los elementos se pueden posicionar utilizando
+                    las propiedades <b>top, bottom, left y right.</b>
+                    La propiedad position debe ser seteada al principio para que funcione correctamente.
+                    Cuando un objeto está posicionado con un valor diferente a static, se dice que altera el 
+                    "flujo"(flow) de la página, es decir que se modifica el orden en que fueron establecidos 
+                    los elementos.
+                    Dentro del flujo, donde todos los elementos tienen la misma posición como por ejemplo "relative",
+                    el elemento que irá por arriba será el último establecido dentro del documento html.<br>
+                    Para que un elemento hijo esté detras de su elemento padre será necesario que el padre este 
+                    definido con "relative" y que su hijo este definido con un z-index negativo mientras que 
+                    el padre no defina esta propiedad.
+
+                </p>
+                <br>
+                <p><a href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_position">Positions</a></p>
+                <h3>position: static;</h3>
+                <p>
+                    Valor por defecto, un elemento posicionado con stactic siempre estara posicionado acorde al 
+                    flujo normal de la página.
+                </p>
+                <h3>position: fixed;</h3>
+                <p>
+                    Un elemento con position: fixed; estará posicionado relativamente a la posicion de la ventana 
+                    del buscador. Es decir, una vez seteado estará superpuesto a todos los elementos y seguirá 
+                    en esa mision aunque se escrolee la página. Al igual que el resto de valores, para posicionar el
+                    elemento se usaran las propiedades <b>top, bottom, left y right.</b>
+                    Los elementos posicionados con fixed son removidos del flujo normal de la página. El resto de 
+                    elementos de lá página se comporta como si el elemento no estuviera ahí.<br>
+                    Los valores <b>top & left</b> seran prioritarios a la hora de definir la posicion del elemento.
+                    si hay otros valores como bottom y right definidos, serán ignorados y solo es tendran en cuenta 
+                    los primeros mencionados.<br>
+                    Al igual que con absoulte la caja se ajustara al contenido si este no esta definido.
+                </p>
+                <h3>position: relative;</h3>
+                <p>
+                    Un elemento con position: relative; siempre estara posicionado "relativamente" a su pocision
+                    original, las propiedades <b>top, bottom, left y right</b> establecen la distancia desde donde
+                    el elemento estaría por defecto. El elemento puede moverse y superponerse a otros elementos pero 
+                    el espacio reservado para el propio elemento aún se conserva el en flujo original(de una manera 
+                    similar a cuando se setea visibility: hidden pero con la diferencia de que el elemento permanece 
+                    en otra posición.)
+                    <br>
+                    Este valor no se puede utilizar para celdas de tablas , columnas , grupos de columnas ,
+                    filas , grupos de filas o captions .
+                </p>
+                <h3>position: absolute;</h3>
+                <p>
+                    Un elemento con position: absolute; siempre estara posicionado "relativamente" a su ancestro  más 
+                    cercano con posicion diferente a static, si no hay uno será al elemento en bloque &lt;html&gt; . 
+                    Un elemento con position absolute se elimina del flujo normal. El documento y otros elementos se 
+                    comportan como si este no existiese.<br>
+                    La caja se elimina del flujo, se superpone a sus hermanos, si no es definido top,buttom, left o right
+                    este se quedara donde estaba. Si fuesen establecidos el punto de referencia dejaría de ser el padre 
+                    para ser el viewport o la etiqueta html. Con position absolute la caja de ajusta al contenido.
+                    Sin embargo si el ancho y alto del contenido esta establecido no sucedera ningun cambio.
+                    Para que un elemento absolute tome de referencia un elemento padre, este debe tener un atributo position 
+                    diferente a static.<br>
+                    Para centrar un objeto perfectamente en el centro es necesario darle valor 0 a los siguientes:
+                    top,left,bottom,right y adicionalmente darle auto a margin.x
+                </p>
+                <h3>position: sticky;</h3>
+                <p>
+                    Esta propiedad funciona como position relative y fixed al mismo tiempo. El espacio reservado en el 
+                    flujo de la página no se pierde. A diferencia de fixed, este no estará todo el tiempo superpuesto sino,
+                    que en el momento en que alcancemos mediante el scroll el elemento, este se superpondra a medida que vayamos
+                    bajando a diferencia de fixed que aparece superpuesto desde el principio.
+                </p>
+                <h3>Absolute y relative</h3>
+                <p>
+                    Si un elemento contenedor es seteado con relative y un elemento hijo es seteado con absolute, este ultimo
+                    podrá superponerse a sus hermanos.
+                </p>
+                <section>
+                    <h2 id="float">Propiedad float</h2>
+                    <p>
+                        Mediante la propiedad float un elemento puede introducirse a la izquierda o derecha de un 
+                        elemento, si el elemento está antes de un texto el texto bordeara al elemento para producir 
+                        el efecto de que el mencionado esta envuelto o "flotando" en el texto. Los valores que puede
+                        recibir son <b>left, right & none</b>. Los elementos solo flotan horizontalmente. Si dos 
+                        elementos son introducidos consecutivamente con float: y la misma direccion y además hay 
+                        suficiente espacio se posicionaran un al lado del otro. EL atributo debe ser colocado al 
+                        primero elemento.                  
+                    </p>
+                    <p>
+                        Ej:<br>
+                        .img { <br>
+                            &nbsp;&nbsp;float: left; <br>
+                        }
+                    </p>
+                    <img src="../images/plus.jpg" width="25%" style="float: left;">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo iste culpa sequi fugit doloremque, rem asperiores quisquam possimus unde beatae. Tempore minus quos porro tempora ad libero cum omnis debitis.
+                        Officia iste hic, distinctio aspernatur cumque, tempora repellat recusandae sequi at facilis sunt voluptate amet accusantium ipsum, ipsam officiis! Perspiciatis sed ut excepturi aperiam fugiat officiis voluptates eaque illo quibusdam?
+                        Modi aperiam velit tempore exercitationem. Magnam debitis quam natus eum numquam aspernatur doloribus, distinctio quod, esse nemo modi possimus quas cumque est dicta, officia reiciendis voluptate nulla perferendis. Nisi, eos!
+                        Aspernatur nostrum possimus ut iste! Veniam facilis iste temporibus quis expedita, earum repellendus iusto ipsum illo consequatur aspernatur vitae totam fugiat debitis nihil, magnam labore harum eaque suscipit! Eaque, odio.
+                    </p>
+                    <h3 style="clear: left;">Propiedad clear</h2>
+                    <p>
+                        La propiedad clear evita que los elementos consecutivos se vean afectados por la propiedad 
+                        float. Debe colocarse la propiedad en el elemento que se desea que no "flote" al rededor 
+                        del elemento con la propiedad float y cololar la misma direccion.La propiedad clear especifica
+                        los lados de un elemento donde no se permite que estén otros elementos flotantes. <b>Los 
+                        valores especifican los lados en los cuales no se permite un elemento con la propiedad float</b>
+                        Los valores son: <b>right, left & both</b>
+                    </p>
+                </section>
+
+                <section>
+                    <h2 id="overflow">La propiedad overflow</h2>
+                    <p>
+                        La propiedad de overflow de CSS especifica el comportamiento que se produce 
+                        cuando el contenido de un elemento desborda el cuadro del elemento. Si es un elemento 
+                        con display: block; la verticalidad del tamaño dependera del contenido. Si el tamaño del 
+                        contenido vertical es definido se podrá especificar el comportamiento del elemento mediante 
+                        overflow; Si el contenido desborda el tamaño de una caja normal con la verticalidad 
+                        definida, este contenido se mostrara pero sobresaldra de la caja.<br>
+                        La propiedad overflow puede ser dividida en <b>overflow-x y overflow-y</b>
+                    </p>
+                    <p>
+                        Valores:
+                        <ul>
+                            <li><b>visible</b>:Valor por defecto</li>
+                            <li><b>scroll</b>: 
+                                Si se sobrepasa, se creara una barra de scroll horizontal y vertical para abarcar 
+                                el contenido
+                            </li>
+                            <li><b>hidden</b>: 
+                                Si el contenido sobrepasa, este contenido sobresaliente
+                                no será visible
+                            </li>
+                            <li><b>auto</b>:
+                                Solo se crea scroll vertical.
+                            </li>
+                        </ul>
+                    </p>
+                    <p>
+                        Ej: <br>
+                        .div { <br>
+                            &nbsp;&nbsp;width: 100px; <br>
+                            &nbsp;&nbsp;height: 100px; <br>
+                            &nbsp;&nbsp;overflow: scroll; <br>
+                        } <br>
+                    </p>
+                    <div style="width: 100px; height: 100px; overflow:scroll;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita eum, atque possimus ratione distinctio incidunt autem! Velit rerum explicabo nulla eaque, ab doloremque voluptatem! Praesentium dolorem ea numquam reprehenderit quod.
+                        Quis dolore cumque ipsam explicabo inventore officiis consectetur cum unde alias, provident dolorem doloribus, expedita iure sapiente totam eaque, soluta id et veniam sint. Tempora quia est laudantium nulla voluptatum.
+                        Voluptates, eaque eveniet. Harum eveniet maxime, minus expedita dolorum dolores ipsa iste non ea, esse ex ratione libero, laborum suscipit obcaecati quia quis ab quos voluptates reprehenderit. Debitis, optio mollitia.
+                    </div>
+                </section>
+                <section>
+                    <h2 id="z-index">La propiedad z-index</h2>
+                    <p>
+                        La propiedad z-index especifica el orden de pila de un elemento 
+                        (qué elemento debe colocarse delante o detrás de los demás).
+                        Por defecto se apilara el ultimo elemento encima de otro. La propiedad z-index 
+                        funciona solamente en elementos con position: relative absolute o fixed;. Para que un 
+                        elemento este encima de otro, este tendra que tener un <b>valor numerico</b> de z-index 
+                        mayor al elemento al que se quiere superponer.
+                    </p>
+                    <p>
+                        Ej: <br>
+                        .div1 {
+                            &nbsp;&nbsp;position:relative; <br>
+                            &nbsp;&nbsp;width: 100px; <br>
+                            &nbsp;&nbsp;height: 100px; <br>
+                            &nbsp;&nbsp;z-index: 3; <br>
+                            &nbsp;&nbsp;background-color: red; <br>
+                        }<br>
+                        .div2 {
+                            &nbsp;&nbsp;position:relative; <br>
+                            &nbsp;&nbsp;width: 100px; <br>
+                            &nbsp;&nbsp;height: 100px; <br>
+                            &nbsp;&nbsp;z-index: 2; <br>
+                            &nbsp;&nbsp;background-color: blue; <br>
+                        }<br>
+                    </p>
+                    <div style="position: relative; width: 100px; height:100px; z-index:3; background-color: red">Hola Mundo!</div>
+                    <div style="position: relative; width: 100px; height:100px; z-index:2; background-color: blue; margin-left: 25px; margin-top: -50px;">Hola Mundo!</div>
+
+                </section>
+            </article>
+        </section>
+    </body>
+ </html>

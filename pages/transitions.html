@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ES">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/style.css">
+        <title>CSS - Transiciones & Transformaciones</title>
+        <style>
+            .tra {
+                background-color: blue;
+                transition: background-color 0.5s 1s;
+                width: 100px;
+                height: 100px;
+            }
+            .tra:hover {
+                color: white;
+                background-color: red;
+            }
+            .div1 {
+                position: relative;
+                width: 100px;
+                height: 100px;
+                margin: 30px;
+                padding: 30px;
+                border: 1px solid black;
+            }
+            .div2 {
+                padding: 50px;
+                position: absoulute;
+                background-color: red;
+                border: 1px solid white;
+                transform: rotate(45deg);
+                transform-origin:25% 75%;
+            }
+            .divk {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+            }
+            .divk:hover {
+                animation-name: colorchange;
+                animation-duration: 1s;
+                -webkit-animation-name: colorchange;
+                -webkit-animation-duration: 1s;
+            }
+            @keyframes colorchange {
+                0% {background-color: red; }
+                50% {background-color: green; }
+                100% {background-color: blue; }
+            }
+            div.X {
+                width:250px;
+                height:100px;
+                color:white;
+                background-color:green;
+                transform: rotateX(150deg);
+                -webkit-transform: rotateX(150deg);
+            }
+            div.Y {
+                width:250px;
+                height:100px;
+                color:white;
+                background-color:green;
+                transform: rotateY(150deg);
+                -webkit-transform: rotateY(150deg);
+            }
+            div.Z {
+                width:250px;
+                height:100px;
+                color:white;
+                background-color:green;
+                transform: rotateZ(150deg);
+                -webkit-transform: rotateZ(150deg);
+            }
+            div.empty-div {
+                position: relative;
+                height: 200px;
+                width: 200px;
+                margin: 100px;
+                padding: 10px;
+                border: 1px solid black;
+                perspective: 100px;
+                -webkit-perspective: 100px;
+            }
+            div.green-div {
+                padding: 60px;
+                position: absolute;
+                background-color: #8bc34a;
+                border: 1px solid white;
+                transform: rotateX(45deg);
+                -webkit-transform: rotateX(45deg);
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>CSS - Transiciones & Transformaciones</h1>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="../index.html">BÁSICO</a></li>
+                    <li><a href="./text.html">TEXT</a></li>
+                    <li><a href="./propertys.html">PROPIEDADES</a></li>
+                    <li><a href="./pyl.html">POSICIONAMIENTO & DISEÑO</a></li>
+                    <li><a href="./backgroundandgradients.html">GRADIENTS & BACKGROUNDS</a></li>
+                    <li><a href="#">TRANSICIONES & TRANSFORMACIONES</a></li>
+                    <li><a href="./filters.html">FILTER</a></li>
+                    <li><a href="./display.html">DISPLAY</a></li>
+                    <li><a href="./responsive.html">RESPONSIVE DESIGN</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section>
+            <h4>Contenidos</h4>
+            <ul class="page-nav">
+                <li><a href="#transition">transition</a></li>
+                <li><a href="#rotate">transform: rotate()</a></li>
+                <li><a href="#origin">transform-origin</a></li>
+                <li><a href="#transform-translate">transform: translate()</a></li>
+                <li><a href="#skew">transform: skew()</a></li>
+                <li><a href="#scale">transform: scale()</a></li>
+                <li><a href="#multi">Multiples transformaciones</a></li>
+                <li><a href="#keyframes">@keyframes</a></li>
+                <li><a href="#t3d">Transformaciones 3D</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <article>
+                <h2 id="transition">Propiedad transition</h2>
+                <p>
+                    La propiedad transition es una propiedad abreviada 
+                    de <b>transition-property, transition-duration, transition-timing-function (en-US), y 
+                    transition-delay.</b>. Los valores serán espaciados por una coma y tentran el orden en que 
+                    fueron mencionados. Son usados con regularidad empleando pseudoclases o dinamicamente con 
+                    JavaScript. Para agregar más de una transicion deben estar separadas por comas.<br>
+                    Sintaxis: {transition: nombre de la propiedad, duración,funcion, delay;}<br>
+                    En caso de que no haya función puede saltarse ese valor y continuar con delay.
+                    <b>Para que se ejecute una transition es necesario disparar un evento.(hover, onclick,etc).</b>
+                </p>
+                <ul>
+                    <li>
+                        <b>transition-property</b><p>La propiedad CSS transition-property se usa para definir 
+                        los nombres de las propiedades CSS en las que el efecto de la transición debe aplicarse.</p>
+                    </li>
+                    <li>
+                        <b>transition-duration</b><p> La propiedad de CSS transition-duration establece el 
+                        tiempo que debe tardar una animación de transición en completarse. Por defecto, 
+                        el valor es de 0s, esto quiere decir que no se producirá ninguna animación.</p>
+                    </li>
+                    <li>
+                        <b>transition-timing-function</b><p> La transition-timing-function
+                        establece cómo se calculan los valores intermedios para las propiedades CSS que 
+                        se ven afectadas por un efecto de transición.</p>
+                    </li>
+                    <li>
+                        <b>transition-delay</b>: La propiedad CSS transition-delay especifica la 
+                        cantidad de tiempo a esperar entre un cambio pedido hacia una propiedad y 
+                        el comienzo de un efecto de transicion (transition effect).
+                    </li>
+                </ul>
+                <p>
+                    Ej: <br>
+                    .div {<br>
+                    &nbsp;&nbsp;background: blue; <br>
+                    &nbsp;&nbsp;transition: background 0.5s 1s
+                    }
+                    .div:hover { <br>
+                    &nbsp;&nbsp;background: red <br>
+                    &nbsp;&nbsp;color: white;
+                    }
+                </p>
+                <br>
+                <div class="tra">
+                    Hola Mundo!
+                </div>
+                <h3>trainsition-timing-function</h3>
+                <p>
+                    La propiedad transition-timing-function especifica la velocidad de la curva del efecto de la 
+                    transición. Los valores que puede recibir son los siguientes:
+                </p>
+                <ul style="font-size:1.9rem; list-style: none;">
+                    <li><b>ease</b>:La animación empieza lenta, luego acelera rapidamente.Valor por <b>defecto</b></li>
+                    <li><b>ease-in</b>:La anmación empieza lenta, aclera y para abruptamente.</li>
+                    <li><b>ease-out</b>:La animación empieza rapida, luego desacelera hasta parar.</li>
+                    <li><b>ease-in-out</b>:La animación empieza lenta y luego acelera como ease pero con sutileza.</li>
+                    <li><b>linear</b>:Velocidad constante a lo largo de la animación.</li>
+                    <li>
+                        <b>cubic-bezier()</b>:
+                        Nos permite agregar nuestros propios valores para la velocidad.
+                        Los valores van de 0 a 1. Los valores serán 4 y separados por coma.
+                    </li>
+                </ul>
+                <p>
+                    trainsition-timing-function: cubic-bezier(0, 0, 1, 1)
+                </p>
+            </article>
+
+            <article>
+                <h2 id="rotate">transform: rotate()</h2>
+                <p>
+                    La función CSS rotate() define una transformación que gira un elemento 
+                    alrededor de un punto fijo en un plano 2D sin deformarlo. El punto fijo alrededor del 
+                    cual gira el elemento, mencionado anteriormente, también se conoce como el origen de transformación.
+                    Se establece de manera predeterminada en el centro del elemento, pero se puede personalizar 
+                    utilizando la propiedad <b>transform-origin</b>. El valor que puede recibir rotate es el de
+                    un angulo (deg). Un número negativo dara como resultado una roación en sentido contrario a 
+                    las agujas del reloj.
+                </p>
+                <p>
+                    Ej: <br>
+                    .div {<br>
+                    &nbsp;&nbsp;background: blue; <br>
+                    &nbsp;&nbsp;transition: rotate(45.0deg) <br>
+                    }
+                </p>
+                <br><br>
+                <div style="width: 100px; height: 100px;background: blue; transform:rotate(45deg); color:white;">
+                    Hola Mundo!
+                </div>
+            </article>
+
+            <article>
+                <h2 id="origin">Propiedad transform-origin</h2>
+                <p>
+                    La propiedad CSS transform-origin le permite modificar el origen de las transformaciones 
+                    de un elemento. Por ejemplo, el transform-origin de la función rotate() es el centro de rotación.
+                    (Esta propiedad es aplicada a la primera translación del elemento por el valor negativo de la 
+                    propiedad. A continuación, aplicar la transformación del elemento y después trasladar el valor 
+                    de la propiedad). La propiedad transform-origin le permite cambiar la posición de los elementos transformados.
+                    El valor por defecto de la propiedad es 50% 50%, que corresponde al centro del elemento.
+                    Puede recibir porcentajes, top, center, left, y right como valores.
+                </p>
+                <p>
+                    Ej: <br>
+                    .div1 {<br>
+                    &nbsp;&nbsp;position: relative; <br>
+                    &nbsp;&nbsp;width: 100px <br>
+                    &nbsp;&nbsp;height: 100px <br>
+                    &nbsp;&nbsp;margin: 30px <br>
+                    &nbsp;&nbsp;padding: 30px <br>
+                    &nbsp;&nbsp;border: 1px  solid black; <br>
+                    }<br>
+                    Ej: <br>
+                    .div2 {<br>
+                    &nbsp;&nbsp;padding: 50px;<br>
+                    &nbsp;&nbsp;position: absoulute;<br>
+                    &nbsp;&nbsp;background-color: red; <br>
+                    &nbsp;&nbsp;border: 1px solid white; <br>
+                    &nbsp;&nbsp;transform: rotate(45deg); <br>
+                    &nbsp;&nbsp;transform-origin: 25% 75%; <br>
+                    }<br>
+                </p>
+                <br><br>
+                <div class="div1">
+                    <div class="div2"></div>
+                </div>
+                <br><br><br>
+                <p>
+                    En este caso el origen se establece a un 25% desde la izquierda y a un 75% desde arriba.
+                    Nota personal: el primer valor es vertical mientras que el segundo horizontal.
+                </p>
+            </article>
+
+            <article>
+                <h2 id="transform-translate">transform: translate()</h2>
+                <p>
+                    El método translate() mueve un elemento desde su posición actual 
+                    (según los parámetros proporcionados para el eje x y el eje y). El primer valor corresponde 
+                    al eje x y el segundo corresponde al eje y. Los valores 0 0 corresponden a la esquina
+                    superior izquierda.
+                </p>
+                <p>
+                    Ej:<br>
+                    .p {<br>
+                    &nbsp;&nbsp;transform: translate(100px, 100px);<br>
+                    }
+                </p>
+                <div style="background: red; width:100%; height: 300px;">
+                    <div style="width:100px; height: 100px; background: blue; transform: translate(100px, 100px)"></div>
+                </div>
+                <p>Tambien hay una propiedad con translateX y translateY respectivamente.</p>
+            </article>
+
+            <article>
+                <h2 id="skew">transform: skew()</h2>
+                <p>
+                    El metodo skew permite  inclinar un elemento como si fuera un paralelogramo. Es como si 
+                    estiraran un elemento hacia un angulo
+                </p>
+                <p>
+                    Ej:<br>
+                    .div {<br>
+                    &nbsp;&nbsp; transform: skew(30deg);<br>
+                    }
+                </p>
+                <br>x
+                <div style="width: 300px; height: 100px; background: red; transform: skew(30deg)">
+                </div>
+            </article>
+
+            <article>
+                <h2 id="scale">transform: scale()</h2>
+                <p>
+                    El metodo scale incrementa o reduce el tamaño de un elemento acorde a los parametros 
+                    establecidos para el ancho y largo. El parametro recibe dos valores separados por una coma
+                    siendo 1.0 el valor del 100%, para disminuir el tamaño debera establecerse un valor menor a 
+                    1 y para aumentarlo un numero mayor a este. Si solo se establece un valor para el parametro, 
+                    este se aplicara tanto horizontal, como verticalmente.
+                </p>
+                <p>
+                    Ej:<br>
+                    .div {<br>
+                    &nbsp;&nbsp; width: 300px;<br>
+                    &nbsp;&nbsp; height: 300px;<br>
+                    &nbsp;&nbsp; transform: scale(0.1, 0.1);<br>
+                    }
+                </p>                    
+                <div style="width: 300px; height: 300px; background: red; transform: scale(0.1, 0.1)">
+                </div>
+                <p>Tambien hay una propiedad scaleX y scaleY respectivamente.</p>
+            </article>
+            
+            <article>
+                <h2 id="multi">Multiples transformaciones</h2>
+                <p>
+                    Multiples transformaciones pueden ser usadas a la vez, para hacerlo, los metodos 
+                    deben estar separados por un espacio.
+                </p>
+                <p>
+                    Ej:<br>
+                    .div {<br>
+                    &nbsp;&nbsp; width: 300px;<br>
+                    &nbsp;&nbsp; height: 300px;<br>
+                    &nbsp;&nbsp; transform: scale(0.5, 0.5) rotate(45deg)<br>
+                    }
+                </p>
+                <div style="width: 300px; height: 300px; background: red; transform: scale(0.5, 0.5) rotate(45deg)">
+                </div>
+            </article>
+            
+            <article>
+                <h2 id="keyframes">@keyframes</h2>
+                <p>
+                    La regla arroba @keyframes permite a los autores controlar los pasos intermedios en una 
+                    secuencia de animación CSS mediante el establecimiento de keyframes (o puntos de trayectoria) 
+                    a lo largo de la secuencia de animación que debe ser alcanzado por determinados puntos durante
+                    la animación. Esto le da un control más específico sobre los pasos intermedios de la secuencia
+                    de animación que se obtiene al dejar que el navegador maneje todo automáticamente.
+                    <br>
+                    Para utilizar keyframes, se crea una regla de @keyframes con un nombre que es utilizada 
+                    por la propiedad animation-name para que coincida con una animación de keyframe a su lista. 
+                    Cada regla @keyframes contiene una lista de estilo de selectores de keyframe, cada una de los 
+                    cuales está compuesto de un porcentaje a lo largo de la animación en la que se produce el 
+                    keyframe así como un bloque que contiene la información de estilo para ese keyframe.
+                    <br>
+                </p>
+                <p>
+                Ej:<br>
+                .divk:hover {<br>
+                &nbsp;&nbsp;animation-name: colorchange;<br>
+                &nbsp;&nbsp;animation-duration: 1s;<br>
+                &nbsp;&nbsp;-webkit-animation-name: colorchange;<br>
+                &nbsp;&nbsp;-webkit-animation-duration: 1s;<br>
+                }<br>
+                @keyframes colorchange {<br>
+                &nbsp;&nbsp;0%  {background-color: red;}<br>
+                &nbsp;&nbsp;50%  {background-color: green;}<br>
+                &nbsp;&nbsp;100%  {background-color: blue;}<br>
+                }<br>
+                El 0% puede ser sustituido por la palabra from y el 100% por la palabra to.
+                </p>
+                <div class="divk">
+                </div>
+
+                <h3>Propiedad animation-name</h3>
+                <p>
+                    La propiedad animation-name define que animación será usada en el elemento. Debe estar
+                    emparejada con un @keyframe para que le sea asignada una animación.
+                </p>
+                <h3>Propiedad animation-duration</h3>
+                <p>
+                    La propiedad animation-duration define cuanto durara la animación.
+                </p>
+                <h3>Propiedad animation-timing-function</h3>
+                <p>
+                    Especifica la velocidad de la curva de una animación. Puede recibir los siguientes valores:
+                </p>
+                <ul style="font-size:1.9rem; list-style: none;">
+                    <li><b>ease</b>:La animación empieza lenta, luego acelera rapidamente.Valor por <b>defecto</b></li>
+                    <li><b>ease-in</b>:La anmación empieza lenta, aclera y para abruptamente.</li>
+                    <li><b>ease-out</b>:La animación empieza rapida, luego desacelera hasta parar.</li>
+                    <li><b>ease-in-out</b>:La animación empieza lenta y luego acelera como ease pero con sutileza.</li>
+                    <li><b>linear</b>:Velocidad constante a lo largo de la animación.</li>
+                    <li>
+                        <b>cubic-bezier()</b>:
+                        Nos permite agregar nuestros propios valores para la velocidad.
+                        Los valores van de 0 a 1. Los valores serán 4 y separados por coma.
+                    </li>
+                </ul>
+                <h3>Propiedad animation-delay</h3>
+                <p>
+                    Define el delay antes de que la animación empieze. Puede ser definido en segundos o milisengudos.
+                </p>
+                <h3>Propiedad animation-iteration-count</h3>
+                <p>
+                    Define la cantidad de veces que una animación se repite puede recibir valores numericos o el 
+                    valor <b>'infinite'</b>
+                </p>
+                <h3>Propiedad animation-direction</h3>
+                <p>
+                    Indica el orden en que se reproducen los fotogramas de la animación. Los valores pueden ser:<br>
+                    <b>normal</b>: Valor por defecto, se reproduce por defecto de 0% a 100%. <br>
+                    <b>reverse</b>: De 100% a 0%.<br>
+                    <b>alternate</b>: La animación se reproduce hacía adelante luego hacía atras y hacía adelante 
+                    de nuevo. <br>
+                    <b>alternate-reverse</b>: La animaciín se reproduce haciá atras, luego hacia adelante y hacía 
+                    atras de nuevo. <br>
+                </p>
+                <h3>Propiedad animation</h3>
+                <p>
+                    Una sola propiedad puede englobar todas las animaciones anteriormente mencionadas.
+                </p>
+                <p>
+                    Sintaxis ej:<br>
+                    div {<br>
+                    &nbsp;&nbsp;animation-name: colorchange;<br>
+                    &nbsp;&nbsp;animation-duration: 3s;<br>
+                    &nbsp;&nbsp;animation-timing-function: ease-in;<br>
+                    &nbsp;&nbsp;animation-delay: 1s;<br>
+                    &nbsp;&nbsp;animation-iteration-count: infinite;<br>
+                    &nbsp;&nbsp;animation-direction: reverse;<br>
+                    }<br>
+                    div {<br>
+                    &nbsp;&nbsp;animation: colorchange 3s ease-in 1s infinite reverse;<br>
+                    }
+                </p>
+                <h3>Propiedad animation-fill-mode</h3>
+                <p>
+                    La propiedad CSS animation-fill-mode especifica el modo en que una animación CSS aplica 
+                    sus estilos, estableciendo su persistencia y estado final tras su ejecución.<br>
+                    <b>Valores:</b><br>
+                    None: La animación no aplicará los estilos antes ni después de su ejecución.<br>
+                    forwards:El objeto sobre el que se aplica la animación quedará con los valores y 
+                    estilos que le aplique el último keyframe de la ejecución de la animación. 
+                    El último valor dependerá del valor de animation-direction y animation-iteration-count<br>
+                    backwards:La animación aplicará los valores definidos en el primer keyframe tan 
+                    pronto como se aplique al objeto, y los retendrá durante el tiempo de animation-delay. 
+                    El primer keyframe dependerá del valor de animation-direction<br>
+                    both: La animación seguirá las reglas de las opciones forwards y backwards, 
+                    extendiendo las propiedades de la animación en ambas direcciones.
+                </p>
+            </article>
+            
+            <article>
+                <h2 id="t3d">Transformaciones 3D</h2>
+                <p>
+                    Para emplear transformaciones 3D es necesario emplear el eje z. 3D transforms es similar 
+                    a 2D transforms.
+                </p>
+                Ej:
+                div.X {<br>
+                    width:250px;<br>
+                    height:100px;<br>
+                    color:white;<br>
+                    background-color:green;<br>
+                    transform: rotateX(150deg);<br>
+                    -webkit-transform: rotateX(150deg);<br>
+                }<br>
+                div.Y {<br>
+                    width:250px;<br>
+                    height:100px;<br>
+                    color:white;<br>
+                    background-color:green;<br>
+                    transform: rotateY(150deg);<br>
+                    -webkit-transform: rotateY(150deg);<br>
+                }<br>
+                div.Z {<br>
+                    width:250px;<br>
+                    height:100px;<br>
+                    color:white;<br>
+                    background-color:green;<br>
+                    transform: rotateZ(150deg);<br>
+                    -webkit-transform: rotateZ(150deg);<br>
+                }<br>
+                <div class="X">Hola Mundo!</div>
+                <br>
+                <div class="Y">Hola Mundo!</div>
+                <br><br><br><br>
+                <div class="Z">Hola Mundo!</div>
+                <br><br><br>
+                <h3>Translación</h3>
+                <p>
+                    Los metodos 3D permiten mover un elemento en el eje x,y y z usando lengths(pm em, %, etc.)
+                </p>
+                <p>
+                    Sintaxis ej: <br>
+                    #mybox1 {<br>
+                        transform: translateX(29px) translateY(5em) translateZ(-13px);<br>
+                    }<br>
+                    #mybox1 { <br>
+                        transform: translate3d(-29px, 5em, -13px);
+                    }
+                </p>
+                <h3>Persepectiva</h3>
+                <p>
+                    La perspectiva define cómo se representa la profundidad de la escena 3D. 
+                    Piense en la perspectiva como una distancia entre el espectador y el objeto. 
+                    Cuanto mayor sea el valor, mayor será la distancia, por lo que menos intenso será el 
+                    efecto visual.<br>
+                    Al definir la propiedad de perspectiva para un elemento, son los elementos 
+                    secundarios los que obtienen la vista en perspectiva, no el elemento en sí.
+                </p>
+                <p>
+                    Ej:<br>
+                    div.empty-div {<br>
+                        position: relative;<br>
+                        height: 200px;<br>
+                        width: 200px;<br>
+                        margin: 30px;<br>
+                        padding: 10px;<br>
+                        border: 1px solid black;<br>
+                        perspective: 100px;<br>
+                    }<br>
+                    div.green-div {<br>
+                        padding: 60px;<br>
+                        position: absolute;<br>
+                        background-color: #8bc34a;<br>
+                        border: 1px solid white;<br>
+                        transform: rotateX(45deg);<br>
+                    }<br>
+                </p>
+                <div class="empty-div">
+                    <div class="green-div">
+                        Hola Mundo!
+                    </div>
+                </div>
+            </article>
+        </section>
+    </body>
+</html>

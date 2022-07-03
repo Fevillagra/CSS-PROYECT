@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ES">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css">
+        <title>CSS - Basico</title>
+    </head>
+    <body>
+        <header>
+            <h1>CSS-BASICS</h1>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="#">BASICO</a></li>
+                    <li><a href="./pages/text.html">TEXT</a></li>
+                    <li><a href="./pages/propertys.html">PROPIEDADES</a></li>
+                    <li><a href="./pages/pyl.html">POSICIONAMIENTO & DISEÑO</a></li>
+                    <li><a href="./pages/backgroundandgradients.html">GRADIENTS & BACKGROUNDS</a></li>
+                    <li><a href="./pages/transitions.html">TRANSICIONES & TRANSFORMACIONES</a></li>
+                    <li><a href="./pages/filters.html">FILTER</a></li>
+                    <li><a href="./pages/display.html">DISPLAY</a></li>
+                    <li><a href="./pages/responsive.html">RESPONSIVE DESIGN</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div>
+            <section>
+                <h4>Contenidos</h4>
+                <ul class="page-nav">
+                    <li><a href="#syf">Significado & función</a></li>
+                    <li><a href="#lie">CSS en línea, incrustado y externo</a></li>
+                    <li><a href="#sxs">Sintaxis CSS</a></li>
+                    <li><a href="#selectores">Selectores</a></li>
+                    <li><a href="#espe">Especificidad</a></li>
+                    <li><a href="#herencia">Herencia</a></li>
+                    <li><a href="#bem">Metodología BEM</a></li>
+                    <li><a href="#prefijo">Prefijo</a></li>
+                    <li><a href="#pscye">Pseudoclases y Pseudoelementos</a></li>
+                    <li><a href="#unidades">Unidades</a></li>
+                    <li><a href="#var">Variables</a></li>
+                </ul>
+                
+                <h2 id="syf">Significado & función</h2>
+                <p>CSS:"Cascading Style Sheets". Hojas de estilo de cascada.</p>
+                <p>
+                    Mientras que HTML define la estructura de la página, CSS define como se muestran 
+                    los elementos que componen el HTML. Se usa en un archivo separado del HTML para separar
+                    el diseño del contenido.
+                </p>
+            </section>
+        </div>
+        <br>
+        <section>
+            <h2 id="lie">CSS en línea, incrustado y externo</h2>
+            <article>
+                <h3>En línea</h3>
+                <p>&lt;p style="color:white; background-color:gray;" &gt; Text &lt;/p &gt;</p>
+                <p>Resultado:</p>
+                <p style="color:white; background-color:gray;">Text</p>
+                <p>Con un estilo en línea, se aplica un estilo único a un solo elemento.</p>
+            </article>
+            <br>
+            <article>
+                <h3>Integrado/interno</h3>
+                <p>Dentro de la etiqueta head:</p>
+                <p>
+                    &lt;style&gt; 
+                    <br>
+                    p {
+                    <br>
+                    &nbsp;&nbsp;color:white;
+                    <br>
+                    &nbsp;&nbsp;background-color:gray;
+                    <br>
+                    }
+                    <br>
+                    &lt;/style&gt; 
+                </p>
+                <p>Resultado:</p>
+                <p style="color:white; background-color:gray;">Text</p>
+                <p>
+                    El css va dentro de una etiqueta style que al mismo tiempo va adentro de la etiqueta head.
+                    El css integrado o interno solo puede ser aplicado a una sola página. 
+                    En este caso el estilo especificado se aplica a todas las etiquetas p de la página.
+                </p>
+            </article>
+            <br>
+            <article>
+                <h3>CSS externo</h3>
+                <p>
+                    Dentro de un archivo externo con extención ".css", la ruta va especificada dentro 
+                    de la etiqueta body.
+                </p>
+                <p>Ruta dentro del body:</p>
+                <p>&lt;link rel="stylesheet" type="text/css" href="./css/style.css"&gt;</p>
+                <br>
+                <p>Estilo:</p>
+                <p>
+                    &lt;style&gt; 
+                    <br>
+                    p {
+                    <br>
+                    &nbsp;&nbsp;color:white;
+                    <br>
+                    &nbsp;&nbsp;background-color:gray;
+                    <br>
+                    }
+                    <br>
+                    &lt;/style&gt; 
+                </p>
+                <br><br><br>
+            </article>
+
+            <article>
+                <h2 id="sxs">Sintaxis CSS</h2>
+                <p>
+                    CSS se compone de reglas de estilo que el navegador interpreta y 
+                    luego aplica a los elementos correspondientes en su documento.
+                    Una regla de estilo consta de tres partes: <b>selector, propiedad y valor:</b>
+                </p>
+                <br>
+                <p><b>selector {propiedad: valor;}</b></p>
+                <br>
+                <p>
+                    El bloque de declaración contiene una o más declaraciones, separadas por punto y coma.
+                    Cada declaración incluye un nombre de propiedad y un valor, separados por dos puntos.
+                </p>
+            </article>
+            <br><br>
+            <article>
+                <h2 id="selectores">Tipos de selectores</h3>
+                <ul>
+                    <li>
+                        <p>Selector universal: El estilo se aplicara a todos los elementos de la página:</p>
+                        <b>* {propiedad: valor;}</b>               
+                    </li>
+                    <br>
+                    <li>
+                        <p>
+                            Selector de elementos: El estilo se aplicara a todos los elementos especificados de la 
+                            página.
+                        </p>
+                        <b>p {propiedad: valor;}</b>
+                        <p>El estilo se aplicara a todos los elementos &lt;p&gt;</p>
+                    </li>
+                    <br>
+                    <li>
+                        <p>
+                            Selector de id: El estilo se aplicara al único elemento que tenga el id.
+                            Ej: &lt;p id=par-one&gt;text&lt;/p&gt;
+                        </p>
+                        <b>#par-one {propiedad: valor;}</b>
+                    </li>
+                    <br>
+                    <li>
+                        <p>
+                            Selector por atributo: El estilo se aplicara al elemento que contenga el atributo y el
+                            valor que esta entre corchetes. Puede inventarse tanto un atributo como un valor 
+                            para ser seleccionado para asignación de estilos.
+                        </p>
+                        <b>[value='nombre'] {propiedad: valor;}</b>
+                    </li>
+                    <br>
+                    <li>
+                        <p>
+                            Selector de clase: El estilo se aplicara a todos los elementos que 
+                            contengan la misma clase especificada.
+                            Ej: &lt;p class=par-c&gt;text&lt;/p&gt; <br>
+                            &lt;p class=par-c&gt;text&lt;/p&gt;
+                        </p>
+                        <b>.par-c {propiedad: valor;}</b>
+                    </li>
+                </ul>
+                <br>
+                
+                <h3>Selectores avanzados</h3>
+                <ul>
+                    <li>
+                        <p>
+                            Selector descendiente: El estilo se aplica a todos los elementos que se 
+                            encuentren dentro de un primer elemento. Siendo los elementos etiquetas en este caso.
+                            Un elemento es descendiente de otro cuando 
+                            se encuentra entre las etiquetas de apertura y de cierre del elemento padre.
+                        </p>
+                        <b>div p { color: black;}</b>
+                        <p>Con id, clases y elementos</p>
+                        <b>#intro .first em {color: pink; background-color:gray;}</b>
+                        <p>
+                            Solo se aplicara a las etiquetas em que sean hijos de la clase first y cuyas clases first
+                            sean a su vez hijos del id intro.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Combinación de selectores: El estilo se aplicara a cada uno de los 
+                            elementos especificados y separados por una coma.
+                        </p>
+                        <b>selector1, selector2, selector3{atributo: valor;}</b>
+                        <br>
+                        <b>div, p { color: orange;}</b>
+                        <p>
+                            El estilo se aplicara a todos los divs y parrafos.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Selector de hijo: Se usa para seleccionar un elemento que es hijo de otro elemento.
+                        </p>
+                        <b> selector1 > selector2 {atributo: valor};</b>
+                        <br>
+                        <b>div > p { color: white;} </b>
+                        <p>El estilo se aplicara a todos los hijos de las etiquetas div que sean p.</p>
+                    </li>
+                    <li>
+                        <p>
+                            Selector adyacente: Se usa para seleccionar elementos que son hermanos,
+                            es decir, su elemento padre es el mismo y están seguidos en el código HTML.
+                        </p>
+                        <b>selector1 + selector2{ atributo: valor;}</b>
+                        <p>El estilo solo se aplica al selector 2</p>
+                    </li>
+                    <li>
+                        <p>Otros Selectores:</p>
+                        <ul>
+                            <li>
+                                <b>.class1.class2</b>
+                                <i>
+                                    Selección de los elementos con las dos clases: class1 y class2.
+                                    El elemento debera tener ambas clases para que el estilo sea aplicado.
+                                    La diferencia con ".class1 .class2" es que en este caso el estilo solo es
+                                    aplicado al elemento con clase2 que sea hijo de clase1 
+                                </i>
+                            </li>
+                            <li>
+                                <br>
+                                <b>sel1.class1</b><i>Selección de todos los selectores sel1 con clase class1</i>
+                            </li>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h2 id="espe">Especificidad</h2>
+                <p>
+                    La especificidad es la manera mediante la cual los navegadores deciden qué valores 
+                    de una propiedad CSS son más relevantes para un elemento y, por lo tanto, serán aplicados. 
+                    La especificidad está basada en las reglas de coincidencia que están compuestas por diferentes
+                    tipos de selectores CSS.
+                    Si tengo dos etiquetas iguales que asignan diferentes valores, el último será el aplicado.
+                </p>
+                <p>Jerarquia:</p>
+                <ol>
+                    <li>
+                        <b>!important</b>
+                        <p></p>
+                    </li>
+                    <li>
+                        <b>estilos en línea</b>
+                        <p></p>
+                    </li>
+                    <li>
+                        <b>Identificadores</b>
+                        <p></p>
+                    </li>
+                    <li>
+                        <b>Clases</b>
+                        <p></p>
+                    </li>
+                    <li>
+                        <b>Pseudoclases</b>
+                        <p></p>
+                    </li>
+                    <li>
+                        <b>Atributos</b>
+                        <p></p>
+                    </li>
+                    <li>
+                        <b>Elementos</b>
+                        <p></p>
+                    </li>
+                    <li>
+                        <b>Pseudoelementos</b>
+                        <p></p>
+                    </li>
+                </ol>
+            </article>
+            <article>
+                <h2 id="herencia">Herencia</h2>
+                <p>
+                    La herencia se refiere a la forma en que las propiedades fluyen a través de la página.
+                    Un elemento secundario normalmente adoptará las características 
+                    del elemento principal a menos que se defina lo contrario.
+                </p>
+                <p> 
+                    De esta manera si al div padre se le asigna la propiedad color:red sus hijos heredaran
+                    dicha propiedad.
+                </p>
+            </article>
+
+            <article>
+                <h2 id="bem">Metodologia BEM</h2>
+                <p>
+                    Modificador de Bloques de Elementos o BEM por sus siglas en inglés «block element modifier», este método nos propone dividir la interfaz de usuario en bloques 
+                    independientes para crear componentes siendo usado para que nuestras hojas de estilo.
+                </p>
+                <p>
+                    El <b>bloque padre</b> recibira el nombre de la clase normal, si es más de una palabra puede 
+                    separarse con un guion. En caso de tener más de un estilo, el nombre final será el primer nombre
+                    seguido de dos guiones. Ej de nombre normal y alternativo:
+                    <b>class="container container--red"</b>.
+                </p>
+                <p>
+                    Sus <b>hijos</b> recibiran dos guiones bajos seguidos de un nombre extra. Ej:<b> class:"container__input"</b> 
+                </p>
+                <p>
+                    Los <b>hermanos</b> e hijos del bloque padre que tengan alguna singularidad recibiran dos guiones más 
+                    un nombre extra. Ej:<b>class:"container-products__div--offert"</b>.
+                </p>
+                <p>
+                    Los <b>Nietos</b> recibiran un solo guion despues de la estructura clasica de hijo. 
+                    Ej: <b>container-products__div-h1</b>.
+                </p>
+            </article>
+
+            <article>
+                <h2 id="prefijo">Prefijo de proveedores(navegadores)</h2>
+                <p>
+                    Los prefijos de proveedores son formas en que  los fabricantes agregan las nuevas
+                    funcionalidades de css que todavía se encuentran en fase de prueba o experimentacion.
+                    La estructura de uso de los prefijos es la siguiente: <b>{prefijo+propiedad: valor}</b>.
+                </p>
+                <p>Prefijos:</p>
+                <ul>
+                    <li><p>Firefox: <b>-moz-</b></p></li>
+                    <li><p>Safari: <b>-webkit-</b></p></li>
+                    <li><p>Chrome: <b>-webkit-</b></p></li>
+                    <li><p>Opera: <b>-o-</b></p></li>
+                    <li><p>Internet explorer: <b>-ms</b></p></li>
+                </ul>
+                <p>
+                    Ej: <br>
+                    .div {<br>
+                        &nbsp;&nbsp;-webkit-border-radius: 10px;<br>
+                    }<br>
+                </p>
+                <div style="border-radius: 10px; border-color: red; border-style: solid; width:200px;">
+                    Hola Mundo!
+                </div>
+            </article>
+
+            <article>
+                <h2 id="pscye">Pseudoclases y Pseudoelementos</h2>
+                <h3>Pseudoclases</h3>
+                <p>
+                    Las pseudoclases permiten añadir diseño interactivo o no, a elementos o parte de los elementos
+                    sin unsar JavaScript ni ningún otro script.
+                </p>
+                <p>
+                    Sintaxis: La pseudoclase se escribe a continuación del selector seguido de ":". 
+                    Ej: #parent:first-child{...;}
+                </p>
+                <ol>
+                    <li>
+                        <b>:hover</b>
+                        <p>Cuando el mouse esta sobre el elemento, agrega un estilo.</p>
+                    </li>
+                    <li>
+                        <b>:link</b>
+                        <p>Aplica estilo a los links no visitados.</p>
+                    </li>
+                    <li>
+                        <b>:visited</b>
+                        <p>Aplica estilo a los links visitados.</p>
+                    </li>
+                    <li>
+                        <b>:active</b>
+                        <p>Aplica un estilo cuando el elemento es clickeado.</p>
+                    </li>
+                    <li>
+                        <b>:focus</b>
+                        <p>Aplica un estilo a un elemento input cuando seleccionamos el mismo.</p>
+                    </li>
+                    <li>
+                        <b>:lang()</b>
+                        <p>
+                            Es una función que recibe por parámetro un idioma. Aplica un estilo solo al idioma 
+                            pasado en el parámetro
+                        </p>
+                    </li>
+                </ol>
+                <p><a href="https://www.w3schools.com/css/css_pseudo_classes.asp">Pseudoclases</a></p>
+                <h3>Pseudelementos</h3>
+                <p>
+                    Los Pseudoelementos son usados para especificar el estilo de partes de elementos.
+                </p>
+                <p>
+                    Sintaxis: El pseudoelemento se escribe a continuación del selector seguido de "::".
+                    Ej: #text::first-line{...;}
+                </p>
+                <p>Pseudoelementos:</p>
+                <ul>
+                    <li><p><b>::first-line</b>: Modifica la primera línea del selector. Solo funciona en block</p></li>
+                    <li><p><b>::first-letter</b>: Modifica la primera letra del selector. Solo funciona en block </p></li>
+                    <li><p><b>::placeholder</b>: Modifica el "placeholder" de un elemento input.</p></li>
+                    <li><p><b>::selection</b>: Modifica la porcion del elemento que es marcada por el usuario. </p></li>
+                    <li<p><b>::before</b>: Inserta contenido antes de un elemento. Son hijos de un elemento con la propiedad content y son elementos inline</p></li>
+                    <li><p><b>::after</b>: Inserta contenido despues de un elemento. Son hijos de un elemento con la propiedad content y son elementos inline </p></li>
+                </ul>
+                <p>
+                    La propiedad content es usada en combinación con before y after para añadir contenido
+                    de forma dinámica. Esta propiedad, solo puede ser usada con estos elementos.
+                </p>
+            </article>
+
+            <article>
+                <h2 id="unidades">Unidades</h2>
+                <p>
+                    Existen dos tipos de unidades que expresan longitud dentro de css. El primer grupo recibe el 
+                    nombre de <b>medidas relativas</b> y el segundo <b>medidas absolutas</b>. 
+                </p>
+                <h3>Medidas absolutas</h3>
+                <p>
+                    Valores: px(pixeles), cm(centimetros), mm(milimetros), pt(puntos).
+                </p>
+                <h3>Medidas relativas</h3>
+                <p>
+                    Valores: em(1em = 16px. Si el elemento padre recibe un valor diferente, el em recibira un 
+                    valor igual. 1em = tamaño del elemento padre.)<br>
+                    rem(tiene como referencia el tamaño de root siendo 1rem = 16px, para cambiar 
+                    el valor de root hay que cambiar el font-size de la etiqueta html)<br>
+                    %(El valor de porcentaje es relativo tambien al valor root)<br>
+                    vw(viewport 100 viewport corresponde al ancho total de la pantalla.)
+                    vh(corresponde al alto total de la pantalla.)<br>
+                    Cuando en margin o padding es determinado el valor "auto" este tendra a ambos lados un valor 
+                    que pueda alinear el contenido en el centro
+                </p>
+            </article>
+
+            <article>
+                <h2>Variables</h2>
+                <p>
+                    Existen las variables locales y globales, sirven para alojar valores que 
+                    serán introducidos en sustitucion de los valores de las propiedades.
+                    Mientras que las variables globales pueden ser usada por todos los selectores 
+                    las variables locales solo podran ser usadas por el selector en donde fue 
+                    creada dicha variable. Para que una variable sea global debera crearse el 
+                    selector <b>:root</b> , el nombre de la vriable debera comenzar con dos 
+                    guiones intermedios. Para usar la variable creada debera ser usada 
+                    la funcion var(variable) dentro de la propiedad y dentro el nombre de 
+                    la variable creada.
+                </p>
+                <p>
+                    Sintaxis y ejemplos:<br>
+
+                    <b>
+                        Globales:<br>
+                        :root {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;--color-rojo: #f00;<br>
+                        }<br>
+                        .container {<br> 
+                        &nbsp;&nbsp;&nbsp;&nbsp;background-color: var(--color-rojo)<br>
+                        }<br>
+                        Locales:<br>
+                        p {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;--color-rojo: #f00;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;color: var(--color-rojo)  
+                        }
+                    </b>
+                    Nota: Aunque haya dos variables, una global y otra local, con el mismo 
+                    nombre el selector que contenga la local priorizara la variable que fue 
+                    creada dentro del selector.
+                </p>
+            </article>
+        </section>
+    </body>
+</html>
+
+
