@@ -302,7 +302,27 @@
                 <h2 id="bem">Metodologia BEM</h2>
                 <p>
                     Modificador de Bloques de Elementos o BEM por sus siglas en inglés «block element modifier», este método nos propone dividir la interfaz de usuario en bloques 
-                    independientes para crear componentes siendo usado para que nuestras hojas de estilo.
+                    independientes para crear componentes siendo usado para que nuestras hojas de estilo.<br>
+                    Block:Un bloque es una entidad independiente que no necesita de nada más para existir que si mismo.
+                    Los bloques se nombran con la funcionalidad del mismo. Ej:<br> si es un header, el nombre será header.
+                    .header<br>
+                    <br>
+                    Element: Un elemento depende directamente de un bloque por lo que debe estar dentro de este. Ej:<br>
+                    .header__nav <br>
+                    Modificador:  Un modificador en bem, puede ser un bloque o elemento, estos indican  una modificacion 
+                    a dicho elemento o bloque. Se les agrega el nombre del bloque y dos guiones seguidos de la modificacion.
+                    Ej:<br>
+                    .header__nav__link--disabled (usar dos "__" no es lo recomendado)<br>
+                    .header--blue<br>
+                    Si existe más de un elemento con modificacion se le pone solo un guion:<br>
+                    La etiqueta tendra .form__input--color y tambien cualquiera de las siguientes dos clases.<br>
+                    .form__input--color-grey<br>
+                    .form__input--color-red<br>
+                    Si tengo un elemento dentro de un hijo puedo solo agregar un numero. Ej: <br>
+                    .block-elemen1 <br>
+                    .block-elemen2 <br>
+                    Bem no recomienda clases globales reutilizables.<br>
+                    No es necesario que un hijo de header nav sea header__nav puedo usar directamente 'nav'
                 </p>
                 <p>
                     El <b>bloque padre</b> recibira el nombre de la clase normal, si es más de una palabra puede 
